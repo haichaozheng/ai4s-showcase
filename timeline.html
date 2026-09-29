@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>项目之旅 — 人工智能大模型应用</title>
+    <meta name="description" content="社科博士生 9 周构建个人 AI4S 工具栈的 PBL 课程展示——开源 AI4S 项目精选、课程安排与科研产出公开展示入口。">
+    <meta property="og:title" content="人工智能大模型应用 · 2026秋季">
+    <meta property="og:description" content="社科博士生 9 周构建个人 AI4S 工具栈的 PBL 课程展示——开源 AI4S 项目精选、课程安排与科研产出公开展示入口。">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://haichaozheng.github.io/ai4s-showcase/">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <div class="nav-inner">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">
+                    <svg width="26" height="26" viewBox="0 0 32 32" fill="none">
+                        <circle cx="16" cy="16" r="2.8" fill="white"/>
+                        <ellipse cx="16" cy="16" rx="13" ry="5" stroke="white" stroke-width="1.5"/>
+                        <ellipse cx="16" cy="16" rx="13" ry="5" stroke="white" stroke-width="1.5" transform="rotate(60 16 16)"/>
+                        <ellipse cx="16" cy="16" rx="13" ry="5" stroke="white" stroke-width="1.5" transform="rotate(120 16 16)"/>
+                        <circle cx="27.5" cy="13" r="1.4" fill="#06b6d4"/>
+                        <circle cx="6.5" cy="19.5" r="1.4" fill="#06b6d4"/>
+                    </svg>
+                </div>
+                <span class="logo-text">人工智能大模型应用</span>
+            </a>
+            <input type="checkbox" id="nav-toggle" class="nav-toggle">
+            <label for="nav-toggle" class="nav-toggle-label" aria-label="菜单">
+                <span></span><span></span><span></span>
+            </label>
+            <ul class="nav-links">
+                <li><a href="intro.html">课程简介</a></li>
+                <li><a href="timeline.html" class="active">项目之旅</a></li>
+                <li><a href="projects.html">精彩项目</a></li>
+                <li><a href="resources.html">课程资源</a></li>
+                <li><a href="news.html">产业新闻</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <h1 class="page-title">项目之旅</h1>
+        <p class="page-subtitle">9 周 · 4 个阶段 · 从个人科研痛点到工具栈与论文产出</p>
+
+        <div class="section">
+            <div class="timeline">
+
+                <div class="phase">
+                    <div class="phase-dot">1</div>
+                    <div class="phase-card">
+                        <div class="phase-head">
+                            <span class="phase-name">Foundation · AI4S 框架 + 文献智能</span>
+                            <span class="phase-weeks">W1 – W2</span>
+                        </div>
+                        <p class="phase-challenge">核心挑战：如何让 AI 工具栈与个人科研的真实痛点对齐，并完成文献工作的 AI 冷启动？</p>
+                        <ul class="milestone-list">
+                            <li class="milestone"><span><b>W1 AI4S 概论 + 环境搭建</b>：AI4S 理念与社科科研全流程映射、Prompt Engineering 方法论、AI 辅助编程环境（opencode/cursor/trae）→ 交付<b>个人科研需求清单</b></span></li>
+                            <li class="milestone"><span><b>W2 文献智能 + RAG</b>：向量数据库、文档切分与检索策略，构建个人文献知识库、AI 辅助文献综述 → 交付<b>文献知识库 + AI 综述初稿</b> <span class="badge badge-progress">综述初稿</span></span></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="phase">
+                    <div class="phase-dot">2</div>
+                    <div class="phase-card">
+                        <div class="phase-head">
+                            <span class="phase-name">Design · 选题 + 研究设计</span>
+                            <span class="phase-weeks">W3 – W4</span>
+                        </div>
+                        <p class="phase-challenge">核心挑战：如何用 LLM 发现真实的研究空白，并设计一个站得住的研究方案？</p>
+                        <ul class="milestone-list">
+                            <li class="milestone"><span><b>W3 研究选题</b>：LLM 辅助 gap analysis、选题对话与验证、研究问题凝练 → 交付<b>研究选题报告（含 gap 分析）</b></span></li>
+                            <li class="milestone"><span><b>W4 研究设计</b>：方法选择、理论框架构建、变量与测量设计、因果推断方案、Agent 辅助设计探索、批判性思维与判断 → 交付<b>研究设计方案（含假设、变量、数据需求）</b> <span class="badge badge-progress">设计方案</span></span></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="phase">
+                    <div class="phase-dot">3</div>
+                    <div class="phase-card">
+                        <div class="phase-head">
+                            <span class="phase-name">Implementation · 研究方案实施</span>
+                            <span class="phase-weeks">W5 – W7</span>
+                        </div>
+                        <p class="phase-challenge">核心挑战：如何让数据、分析与质量控制都过得了关，把方案做成经得起检验的结论？</p>
+                        <ul class="milestone-list">
+                            <li class="milestone"><span><b>W5 数据采集 + AI 辅助编程 + Skill</b>：API/爬虫/NLP 文本提取、LLM 代码生成（Python/R/Stata）、Skill 封装入门 → 交付<b>数据集 + 分析代码 + 数据采集 Skill</b></span></li>
+                            <li class="milestone"><span><b>W6 数据分析与 AI 解读</b>：LLM 辅助分析、结果解读与验证、定量/定性方法 AI 赋能、Agent 编排分析流程 → 交付<b>分析结果 + AI 解读报告 + 分析 Skill</b></span></li>
+                            <li class="milestone"><span><b>W7 质量控制与迭代</b>：稳健性检验、效度验证、AI 系统评估（可信度评估、偏见检测） → 交付<b>稳健性检验 + 最终结果 + 评估报告</b> <span class="badge badge-live">评估报告</span></span></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="phase">
+                    <div class="phase-dot">4</div>
+                    <div class="phase-card">
+                        <div class="phase-head">
+                            <span class="phase-name">Writing & Integration · 论文写作 + 整合展示</span>
+                            <span class="phase-weeks">W8 – W9</span>
+                        </div>
+                        <p class="phase-challenge">核心挑战：如何把过程沉淀为论文与可复用的工具栈，并完成公开展示？</p>
+                        <ul class="milestone-list">
+                            <li class="milestone"><span><b>W8 论文写作 + 工具栈整合</b>：LLM 辅助学术写作（结构/起草/修订）、五模块整合为统一 AI4S 工作流、同侪互评 → 交付<b>论文初稿 + AI4S 工具栈 v1</b> <span class="badge badge-live">工具栈 v1</span></span></li>
+                            <li class="milestone"><span><b>W9 修订 + 展示与反思</b>：依据同侪互评修订论文、展示工具栈与科研产出、反思报告 → 交付<b>论文终稿 + 工具栈仓库 + 反思报告</b> <span class="badge badge-live">公开展示</span></span></li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        人工智能大模型应用 · 2026秋季课程
+        <span style="display:block;margin-top:4px;font-size:0.9em;opacity:0.7;">最后更新 2026-09-29</span>
+    </footer>
+</body>
+</html>
