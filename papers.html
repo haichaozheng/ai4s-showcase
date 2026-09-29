@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>学术前沿 — 人工智能大模型应用</title>
+    <meta name="description" content="社科博士生 9 周构建个人 AI4S 工具栈的 PBL 课程展示——开源 AI4S 项目精选、课程安排与科研产出公开展示入口。">
+    <meta property="og:title" content="人工智能大模型应用 · 2026秋季">
+    <meta property="og:description" content="社科博士生 9 周构建个人 AI4S 工具栈的 PBL 课程展示——开源 AI4S 项目精选、课程安排与科研产出公开展示入口。">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://haichaozheng.github.io/ai4s-showcase/">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <div class="nav-inner">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">
+                    <svg width="26" height="26" viewBox="0 0 32 32" fill="none">
+                        <circle cx="16" cy="16" r="2.8" fill="white"/>
+                        <ellipse cx="16" cy="16" rx="13" ry="5" stroke="white" stroke-width="1.5"/>
+                        <ellipse cx="16" cy="16" rx="13" ry="5" stroke="white" stroke-width="1.5" transform="rotate(60 16 16)"/>
+                        <ellipse cx="16" cy="16" rx="13" ry="5" stroke="white" stroke-width="1.5" transform="rotate(120 16 16)"/>
+                        <circle cx="27.5" cy="13" r="1.4" fill="#06b6d4"/>
+                        <circle cx="6.5" cy="19.5" r="1.4" fill="#06b6d4"/>
+                    </svg>
+                </div>
+                <span class="logo-text">人工智能大模型应用</span>
+            </a>
+            <input type="checkbox" id="nav-toggle" class="nav-toggle">
+            <label for="nav-toggle" class="nav-toggle-label" aria-label="菜单">
+                <span></span><span></span><span></span>
+            </label>
+            <ul class="nav-links">
+                <li><a href="intro.html">课程简介</a></li>
+                <li><a href="timeline.html">项目之旅</a></li>
+                <li><a href="projects.html">精彩项目</a></li>
+                <li><a href="resources.html">课程资源</a></li>
+                <li><a href="papers.html" class="active">学术前沿</a></li>
+                <li><a href="news.html">产业新闻</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <h1 class="page-title">学术前沿</h1>
+        <p class="page-subtitle">AI × 社会科学的重要论文速递与解读（不定期更新）</p>
+
+        <!-- 新增论文条目：复制下方模板，填入内容，放在 .news-list 内顶部即可 -->
+        <!--
+        <div class="news-card">
+            <div class="news-meta">
+                <span class="news-date">2024-01</span>
+                <span class="news-source">期刊：XX</span>
+            </div>
+            <h3 class="news-title">论文标题</h3>
+            <p class="news-summary">一两句话概括论文做了什么、发现了什么，以及对本课程/社科研究的启示。</p>
+            <a href="#" class="news-link">阅读论文 →</a>
+        </div>
+        -->
+
+        <div class="note-banner">
+            <svg viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+            <span>精选"AI × 社会科学"与 AI4S 领域的奠基与前沿论文：为什么大模型能改变社科研究？证据在哪里？边界在哪里？</span>
+        </div>
+
+        <div class="section">
+            <div class="news-list">
+                <div class="news-card">
+                    <div class="news-meta">
+                        <span class="news-date">2024-05</span>
+                        <span class="news-source">期刊：PNAS</span>
+                    </div>
+                    <h3 class="news-title">Can Generative AI improve social science?</h3>
+                    <p class="news-summary">杜克大学社会学家 Chris Bail 的方法论长文：生成式 AI 有潜力改进调查研究和在线实验、自动内容分析与仿真智能体等社科方法，但真正的瓶颈在于研究者的判断力——AI 时代"提出好问题"比"跑出结果"更稀缺，同时须警惕低质量研究的泛滥。</p>
+                    <a href="https://www.pnas.org/doi/10.1073/pnas.2314021121" target="_blank" rel="noopener" class="news-link">阅读论文 →</a>
+                </div>
+                <div class="news-card">
+                    <div class="news-meta">
+                        <span class="news-date">2023-07</span>
+                        <span class="news-source">期刊：PNAS</span>
+                    </div>
+                    <h3 class="news-title">ChatGPT outperforms crowd workers for text-annotation tasks</h3>
+                    <p class="news-summary">LLM 文本标注的奠基实证：在推文的相关性、立场、主题、框架等标注任务上，ChatGPT 零样本准确率反超 MTurk 众包工人约 25 个百分点，编码者间一致性更高，单条标注成本仅约 0.003 美元——社科文本编码"效率革命"的起点。</p>
+                    <a href="https://www.pnas.org/doi/10.1073/pnas.2305016120" target="_blank" rel="noopener" class="news-link">阅读论文 →</a>
+                </div>
+                <div class="news-card">
+                    <div class="news-meta">
+                        <span class="news-date">2024-02</span>
+                        <span class="news-source">期刊：Computational Linguistics</span>
+                    </div>
+                    <h3 class="news-title">Can Large Language Models Transform Computational Social Science?</h3>
+                    <p class="news-summary">25 个计算社会科学基准、13 个模型的系统评测：零样本 LLM 在分类任务上逼近微调模型，在自由式编码任务上甚至常超过众包参照。论文同时给出面向社科的 Prompt 最佳实践——本课程 Prompt 方法论的直接参照之一。</p>
+                    <a href="https://arxiv.org/abs/2305.03514" target="_blank" rel="noopener" class="news-link">阅读论文 →</a>
+                </div>
+                <div class="news-card">
+                    <div class="news-meta">
+                        <span class="news-date">2023-06</span>
+                        <span class="news-source">期刊：Science</span>
+                    </div>
+                    <h3 class="news-title">AI and the transformation of social science research</h3>
+                    <p class="news-summary">六位社会科学家在 Science 上的联合展望：LLM 正在改变从研究设计到因果推断的社科实践——以远超传统方法的规模与速度检验人类行为理论；但偏差管理与数据保真度是生命线。理解"AI4S 重构社科研究流程"这一课程命题的原始文献。</p>
+                    <a href="https://www.science.org/doi/10.1126/science.adi1778" target="_blank" rel="noopener" class="news-link">阅读论文 →</a>
+                </div>
+                <div class="news-card">
+                    <div class="news-meta">
+                        <span class="news-date">2023-08</span>
+                        <span class="news-source">期刊：Nature</span>
+                    </div>
+                    <h3 class="news-title">Scientific discovery in the age of artificial intelligence</h3>
+                    <p class="news-summary">Nature 权威综述：AI 正沿"数据、模型、实验"三条主线加速科学发现——自监督学习、几何深度学习、科学大模型与自主实验。虽以自然科学为主，但其"AI 重构科研全流程"的范式框架同样适用于社会科学，是 AI4S 的大图景入口。</p>
+                    <a href="https://www.nature.com/articles/s41586-023-06221-2" target="_blank" rel="noopener" class="news-link">阅读论文 →</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        人工智能大模型应用 · 2026秋季课程
+        <span style="display:block;margin-top:4px;font-size:0.9em;opacity:0.7;">最后更新 2026-09-29</span>
+    </footer>
+</body>
+</html>
