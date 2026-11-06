@@ -15,6 +15,7 @@
 | index.html | 首页：hero + 六大入口卡片 |
 | intro.html | 课程简介：目标、PBL、五模块工具栈、共同 AI 基础工具栈、跨学科适配、评分结构 |
 | timeline.html | 项目之旅：9 周 4 阶段里程碑（含交付物徽章） |
+| weekly.html | 每周材料：9 周实验文档、数据与阅读资料（随课程滚动更新） |
 | projects.html | 精彩项目：开源 AI4S 项目精选（按课程五模块归类，非学生项目） |
 | resources.html | 课程资源：视频资料、电子书与社区资源 |
 | papers.html | 学术前沿：AI × 社会科学重要论文速递与解读 |
@@ -56,6 +57,17 @@
 - `badge-live` 开源（绿）
 - `badge-demo` 内测/演示（靛蓝）
 - `badge-progress` 快速迭代中（黄）
+
+### 新增每周材料（weekly.html + materials/）
+
+1. 将文件放入对应周目录（`materials/week01/` … `materials/week09/`），建议命名：
+   - 实验文档：`lab.pdf`（浏览器可直接预览）
+   - 数据：`data.zip`（**单文件须小于 100MB**，GitHub 硬限制）
+2. 在 weekly.html 对应 `week-card` 的 `material-list` 中，复制页面底部注释里的条目模板，填入文件名、大小与链接
+3. 删除该周的"待发布"占位条目，并把卡片头部徽章 `badge-progress 待发布` 改为 `badge-live 已发布`
+4. 阅读资料多为外部链接（论文 DOI / GitHub / 网页），直接用"阅读资料（外部链接）条目模板"
+
+weekly.html 内已内置注释模板，含本地文件与外部链接两种条目写法。
 
 ### 新增新闻条目（news.html）
 

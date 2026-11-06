@@ -10,7 +10,7 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://haichaozheng.github.io/ai4s-showcase/">
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
-    <link rel="stylesheet" href="style.css?v=2">
+    <link rel="stylesheet" href="style.css?v=3">
 </head>
 <body>
     <nav>
@@ -35,6 +35,7 @@
             <ul class="nav-links">
                 <li><a href="intro.html" class="active">课程简介</a></li>
                 <li><a href="timeline.html">项目之旅</a></li>
+                <li><a href="weekly.html">每周材料</a></li>
                 <li><a href="projects.html">精彩项目</a></li>
                 <li><a href="resources.html">课程资源</a></li>
                 <li><a href="papers.html">学术前沿</a></li>
@@ -49,7 +50,7 @@
 
         <div class="section">
             <div class="card" style="margin-bottom:20px;">
-                <p><strong>课程目标</strong>：围绕学生个人科研项目构建 AI4S 工具栈，并应用该工具栈开展科研。每位博士生在 9 周内独立构建覆盖科研全流程的个人工具栈，并以真实科研产出（论文初稿）与工具栈仓库公开展示。</p>
+                <p><strong>课程目标</strong>：围绕学生个人科研项目构建 AI4S 工具栈，并应用该工具栈开展科研；进而在 AI 辅助社会科研的<strong>方法论层面</strong>建立自觉——理解社会计算带来的范式转移，能对自己的 AI 辅助科研过程做方法论审视与论证。每位博士生在 9 周内独立构建覆盖科研全流程的个人工具栈（先修要求：有一定 Python 基础和大模型使用经验），并以真实科研产出与工具栈仓库公开展示。</p>
             </div>
         </div>
 
@@ -61,7 +62,19 @@
                 <h2 class="section-title">教学方法</h2>
             </div>
             <div class="card">
-                <p>课程采用 <strong>Project Based Learning（PBL）</strong>——学生在一个真实、有意义的学期项目中主动学习：围绕自己的博士课题，逐步构建覆盖文献→选题→设计→实施→写作全流程的 AI4S 工具栈。方法论优先：工具栈服务于研究方法论，AI 辅助"<strong>做对</strong>"比"做出来"更重要。</p>
+                <p>课程采用 <strong>Project Based Learning（PBL）</strong>——学生在一个真实、有意义的学期项目中主动学习：围绕自己的博士课题，逐步构建覆盖文献→选题→设计→实施→写作全流程的 AI4S 工具栈。方法论优先：工具栈服务于研究方法论，AI 辅助"<strong>做对</strong>"比"做出来"更重要；每周教学设计围绕"理念—工具—操作—交付成果"四核心咬合推进。</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-header">
+                <div class="section-icon">
+                    <svg viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+                </div>
+                <h2 class="section-title">方法论基础：社会计算与经典文献</h2>
+            </div>
+            <div class="card">
+                <p>本课程不止于"会用工具"，更要求学生在 AI 辅助社会科研的方法论层面建立自觉：理解<strong>社会计算</strong>（以大数据与人工智能算法研究社会、经济与管理）为社会科学带来的范式转移。方法论内容以"<strong>核心参考书 + 经典文献</strong>"方式随五模块渐进融入——核心参考书为罗家德等《<a href="https://www.tup.com.cn/bookscenter/book_11246901.html" target="_blank" rel="noopener" style="color:var(--accent);">社会计算方法论：社会科学研究的一次范式转移</a>》（清华大学出版社，2026），其主线"理论、数据挖掘与建模的三角对话"正是本课程的人机交互姿态；Lazer (2009/2020)、Argyle (2023) 等经典文献随周次渐进安排（见<a href="weekly.html" style="color:var(--accent);">每周材料</a>）。</p>
             </div>
         </div>
 
@@ -73,7 +86,7 @@
                 <h2 class="section-title">AI4S 工具栈五模块</h2>
             </div>
             <div class="card">
-                <p>工具栈按<strong>社科科研全流程</strong>组织为五个模块，大模型在每个模块中既是工具也是"研究伙伴"：<strong>文献智能</strong>（检索→阅读→综述）、<strong>研究选题</strong>（发现空白→凝练问题）、<strong>研究设计</strong>（方法选择→框架搭建→假设推导）、<strong>研究方案实施</strong>（数据采集→编码分析→结果解读）、<strong>论文写作</strong>（结构规划→撰写修订→格式发表），并有 <strong>AI 系统评估</strong>作为全流程质量保障贯穿始终。</p>
+                <p>工具栈按<strong>社科科研全流程</strong>组织为五个模块，大模型在每个模块中既是工具也是"研究伙伴"：<strong>文献智能</strong>（检索→阅读→综述）、<strong>研究选题</strong>（多智能体 gap 分析流水线，产出带证据锚点的 Gap 证据表）、<strong>研究设计</strong>（方法审计配置与"生成→审计→裁决→定稿"循环）、<strong>研究实施</strong>（数据三路径 + StatsPAI agent-native 计量 + Mesa/Mesa-LLM 智能体仿真）、<strong>论文写作</strong>（写作-审计双 Agent，生成与核验分离），并有 <strong>AI 系统评估</strong>嵌入研究实施各步作为质量保障。</p>
             </div>
         </div>
 
@@ -85,7 +98,7 @@
                 <h2 class="section-title">共同 AI 基础工具栈</h2>
             </div>
             <div class="card">
-                <p>六项 AI 基础能力随科研流程<strong>渐进式融入</strong>，而非单独设课：<strong>Prompt Engineering</strong> 与 <strong>AI 辅助编程</strong>（opencode/cursor/trae）W1 起步 → <strong>RAG</strong> W2 文献智能 → <strong>Agent</strong> W4 研究设计 → <strong>Skill</strong> W5-6 方案实施 → <strong>AI 系统评估</strong> W7 质量控制。大模型贯穿全程，作为工具栈的核心支撑。</p>
+                <p>六项 AI 基础能力随科研流程<strong>渐进式融入</strong>，而非单独设课：<strong>Prompt Engineering</strong> 与 <strong>AI 辅助编程</strong>（opencode/cursor，W7 增补 DeepSeek Harness 形成双 harness 对比）W1 起步 → <strong>RAG</strong> W3 文献综述 → <strong>Agent</strong> W4-W5 gap 分析多智能体与研究设计生成-审计多智能体，W6-W8 延续 → <strong>Skill</strong> W6-7 研究实施、W9 论文评审 → <strong>AI 系统评估</strong> W7 质量控制、嵌入各步验证。大模型贯穿全程，作为工具栈的核心支撑。</p>
             </div>
         </div>
 
@@ -121,14 +134,14 @@
                 <h2 class="section-title">评分结构一览</h2>
             </div>
             <div class="card">
-                <p>总成绩 = <strong>AI4S 工具栈完整性 15%</strong>（五模块完整、大模型有效贯穿）+ <strong>科研产出质量 35%</strong>（论文/报告的学术质量与规范）+ <strong>研究过程与方法论 20%</strong>（选题→设计→实施→写作全链条规范性）+ <strong>同侪互评 15%</strong>（跨学科视角互评工具栈与产出）+ <strong>最终反思报告 15%</strong>（对 AI4S 赋能社科科研的深度反思）。</p>
+                <p><strong>总评 = 平时 50% + 期末 50%</strong>。平时：<strong>出勤与课堂参与 10%</strong>（9 周出勤 + 讨论参与度）+ <strong>阶段成果一：研究选题与研究设计（含文献综述）25%</strong>（W5，检索工具列表 + RAG 知识库 + 综述文稿 + gap 多智能体分析 + 研究问题陈述 + 研究设计方案）+ <strong>阶段成果二：个人科研工具栈汇总 15%</strong>（W8，五模块工具栈 v1 + 引用核验报告 + AI 使用声明）。期末：<strong>个人科研报告 50%</strong>（W9，论文终稿 + 工具栈仓库 + 反思报告）。文献综述不单独计分，作为 gap 分析语料输入计入阶段成果一。</p>
             </div>
         </div>
     </main>
 
     <footer>
         人工智能大模型应用 · 2026秋季课程
-        <span style="display:block;margin-top:4px;font-size:0.9em;opacity:0.7;">最后更新 2026-09-29</span>
+        <span style="display:block;margin-top:4px;font-size:0.9em;opacity:0.7;">最后更新 2026-11-06</span>
     </footer>
 </body>
 </html>

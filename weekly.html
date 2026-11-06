@@ -1,0 +1,674 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>每周材料 — 人工智能大模型应用</title>
+    <meta name="description" content="9 周课程的实验文档、数据与阅读资料，随课程滚动更新，学生可在线预览或下载。">
+    <meta property="og:title" content="每周材料 · 人工智能大模型应用">
+    <meta property="og:description" content="9 周课程的实验文档、数据与阅读资料，随课程滚动更新。">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://haichaozheng.github.io/ai4s-showcase/weekly.html">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="style.css?v=3">
+</head>
+<body>
+    <nav>
+        <div class="nav-inner">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">
+                    <svg width="26" height="26" viewBox="0 0 32 32" fill="none">
+                        <circle cx="16" cy="16" r="2.8" fill="white"/>
+                        <ellipse cx="16" cy="16" rx="13" ry="5" stroke="white" stroke-width="1.5"/>
+                        <ellipse cx="16" cy="16" rx="13" ry="5" stroke="white" stroke-width="1.5" transform="rotate(60 16 16)"/>
+                        <ellipse cx="16" cy="16" rx="13" ry="5" stroke="white" stroke-width="1.5" transform="rotate(120 16 16)"/>
+                        <circle cx="27.5" cy="13" r="1.4" fill="#06b6d4"/>
+                        <circle cx="6.5" cy="19.5" r="1.4" fill="#06b6d4"/>
+                    </svg>
+                </div>
+                <span class="logo-text"><span class="logo-title">人工智能大模型应用</span><span class="logo-subtitle">AI for Social Science</span></span>
+            </a>
+            <input type="checkbox" id="nav-toggle" class="nav-toggle">
+            <label for="nav-toggle" class="nav-toggle-label" aria-label="菜单">
+                <span></span><span></span><span></span>
+            </label>
+            <ul class="nav-links">
+                <li><a href="intro.html">课程简介</a></li>
+                <li><a href="timeline.html">项目之旅</a></li>
+                <li><a href="weekly.html" class="active">每周材料</a></li>
+                <li><a href="projects.html">精彩项目</a></li>
+                <li><a href="resources.html">课程资源</a></li>
+                <li><a href="papers.html">学术前沿</a></li>
+                <li><a href="news.html">产业新闻</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <h1 class="page-title">每周材料</h1>
+        <p class="page-subtitle">9 周实验文档 · 数据 · 阅读资料，随课程滚动更新</p>
+
+        <div class="note-banner">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+            实验文档与数据通常于每次上课前一天发布，点击条目即可在线预览或下载；阅读资料随课程方法论主线（社会计算与经典文献）渐进安排。
+        </div>
+
+        <!-- ============ Phase 1 · Foundation（W1-3） ============ -->
+        <div class="section">
+            <div class="section-header">
+                <div class="section-icon"><svg viewBox="0 0 24 24"><path d="M3 12h4l3-9 4 18 3-9h4"/></svg></div>
+                <div class="section-title">Foundation · 工具准备 + 文献检索与综述</div>
+                <span class="phase-weeks">W1 – W3</span>
+            </div>
+
+            <div class="week-card" id="w1">
+                <div class="week-head">
+                    <span class="week-num">W1</span>
+                    <div class="week-info">
+                        <div class="week-title">工具准备 — AI 工作环境搭建</div>
+                        <div class="week-deliverable">本周交付：工具环境就绪 + 案例对比结果（数据集 + 双方法代码 + 对比表 + 方法选择说明）</div>
+                    </div>
+                    <span class="badge badge-progress">待发布</span>
+                </div>
+                <div class="week-body">
+                    <div class="material-group">
+                        <div class="material-group-title">实验文档</div>
+                        <div class="material-list">
+                            <div class="material-item is-pending">
+                                <div class="material-icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg></div>
+                                <div class="material-info">
+                                    <div class="material-name">实验指导书：光线传媒股吧情感分析——大模型与传统方法对比</div>
+                                    <div class="material-meta">PDF · 含环境搭建、Prompt 驱动脚本与批量 API 调用</div>
+                                </div>
+                                <span class="material-status">待发布</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="material-group">
+                        <div class="material-group-title">数据</div>
+                        <div class="material-list">
+                            <div class="material-item is-pending">
+                                <div class="material-icon"><svg viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg></div>
+                                <div class="material-info">
+                                    <div class="material-name">股吧帖子数据集（课堂 50 条最小闭环 / 课后 ≥300 条）</div>
+                                    <div class="material-meta">CSV · 含来源与抓取时间戳说明</div>
+                                </div>
+                                <span class="material-status">待发布</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="material-group">
+                        <div class="material-group-title">阅读资料</div>
+                        <div class="material-list">
+                            <div class="material-item has-link">
+                                <div class="material-icon"><svg viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></div>
+                                <div class="material-info">
+                                    <div class="material-name"><a class="material-name" href="https://www.tup.com.cn/bookscenter/book_11246901.html" target="_blank" rel="noopener">罗家德等（2026）《社会计算方法论》第 1-2 章：范式又一次转移 / 一切以理论为基础</a></div>
+                                    <div class="material-meta">清华大学出版社 · 必读 · 锚定课程的人机交互姿态</div>
+                                </div>
+                                <a class="material-link" href="https://www.tup.com.cn/bookscenter/book_11246901.html" target="_blank" rel="noopener">图书主页</a>
+                            </div>
+                            <div class="material-item has-link">
+                                <div class="material-icon"><svg viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></div>
+                                <div class="material-info">
+                                    <div class="material-name"><a class="material-name" href="https://www.science.org/doi/10.1126/science.1167742" target="_blank" rel="noopener">Lazer, D. et al. (2009). "Computational Social Science." <i>Science</i>, 323(5915), 721-723</a></div>
+                                    <div class="material-meta">Science · 必读 · 计算社会科学的诞生宣言</div>
+                                </div>
+                                <a class="material-link" href="https://www.science.org/doi/10.1126/science.1167742" target="_blank" rel="noopener">原文</a>
+                            </div>
+                            <div class="material-item has-link">
+                                <div class="material-icon"><svg viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></div>
+                                <div class="material-info">
+                                    <div class="material-name"><a class="material-name" href="https://www.nature.com/articles/s41586-023-06221-2" target="_blank" rel="noopener">Wang, H. et al. (2023). "Scientific discovery in the age of artificial intelligence." <i>Nature</i>, 620, 47-60</a></div>
+                                    <div class="material-meta">Nature · 选读 · AI4S 大图景</div>
+                                </div>
+                                <a class="material-link" href="https://www.nature.com/articles/s41586-023-06221-2" target="_blank" rel="noopener">原文</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="week-card" id="w2">
+                <div class="week-head">
+                    <span class="week-num">W2</span>
+                    <div class="week-info">
+                        <div class="week-title">文献检索 — 检索工具与策略</div>
+                        <div class="week-deliverable">本周交付：文献检索工具列表（数据库/API/工具/检索式/纳入排除标准）+ 原始文献库</div>
+                    </div>
+                    <span class="badge badge-progress">待发布</span>
+                </div>
+                <div class="week-body">
+                    <div class="material-group">
+                        <div class="material-group-title">实验文档</div>
+                        <div class="material-list">
+                            <div class="material-item is-pending">
+                                <div class="material-icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg></div>
+                                <div class="material-info">
+                                    <div class="material-name">实验指导书：检索式构建、学术 API 调用与 AI 辅助初筛</div>
+                                    <div class="material-meta">PDF · Semantic Scholar / Crossref / 知网</div>
+                                </div>
+                                <span class="material-status">待发布</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="material-group">
+                        <div class="material-group-title">数据</div>
+                        <div class="material-list">
+                            <div class="material-item is-pending">
+                                <div class="material-icon"><svg viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg></div>
+                                <div class="material-info">
+                                    <div class="material-name">示例文献元数据集（≥20 篇）</div>
+                                    <div class="material-meta">CSV / BibTeX</div>
+                                </div>
+                                <span class="material-status">待发布</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="material-group">
+                        <div class="material-group-title">阅读资料</div>
+                        <div class="material-list">
+                            <div class="material-item has-link">
+                                <div class="material-icon"><svg viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></div>
+                                <div class="material-info">
+                                    <div class="material-name"><a class="material-name" href="https://www.bmj.com/content/372/bmj.n71" target="_blank" rel="noopener">Page, M.J. et al. (2021). "The PRISMA 2020 statement." <i>BMJ</i>, 372, n71</a></div>
+                                    <div class="material-meta">BMJ · 必读 · 检索即方法论</div>
+                                </div>
+                                <a class="material-link" href="https://www.bmj.com/content/372/bmj.n71" target="_blank" rel="noopener">原文</a>
+                            </div>
+                            <div class="material-item has-link">
+                                <div class="material-icon"><svg viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></div>
+                                <div class="material-info">
+                                    <div class="material-name"><a class="material-name" href="https://www.bitbybitbook.com/" target="_blank" rel="noopener">Salganik, M.J. (2018). <i>Bit by Bit: Social Research in the Digital Age</i>（在线版）</a></div>
+                                    <div class="material-meta">Princeton University Press · 延伸阅读</div>
+                                </div>
+                                <a class="material-link" href="https://www.bitbybitbook.com/" target="_blank" rel="noopener">在线版</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="week-card" id="w3">
+                <div class="week-head">
+                    <span class="week-num">W3</span>
+                    <div class="week-info">
+                        <div class="week-title">文献综述 — RAG 知识库 + AI 综述</div>
+                        <div class="week-deliverable">本周交付：文献综述（RAG 知识库 + 综述文稿 + 阶段反思日志，计入阶段成果一）</div>
+                    </div>
+                    <span class="badge badge-progress">待发布</span>
+                </div>
+                <div class="week-body">
+                    <div class="material-group">
+                        <div class="material-group-title">实验文档</div>
+                        <div class="material-list">
+                            <div class="material-item is-pending">
+                                <div class="material-icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg></div>
+                                <div class="material-info">
+                                    <div class="material-name">实验指导书：构建个人文献知识库（向量数据库 / 文档切分 / 检索策略）+ AI 综述生成</div>
+                                    <div class="material-meta">PDF · 主线为第三方工具配置，进阶轨为手写最小 RAG 代码</div>
+                                </div>
+                                <span class="material-status">待发布</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="material-group">
+                        <div class="material-group-title">数据</div>
+                        <div class="material-list">
+                            <div class="material-item is-pending">
+                                <div class="material-icon"><svg viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg></div>
+                                <div class="material-info">
+                                    <div class="material-name">示例文献语料库（≥20 篇 PDF）</div>
+                                    <div class="material-meta">ZIP</div>
+                                </div>
+                                <span class="material-status">待发布</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="material-group">
+                        <div class="material-group-title">阅读资料</div>
+                        <div class="material-list">
+                            <div class="material-item has-link">
+                                <div class="material-icon"><svg viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></div>
+                                <div class="material-info">
+                                    <div class="material-name"><a class="material-name" href="https://www.tup.com.cn/bookscenter/book_11246901.html" target="_blank" rel="noopener">罗家德等（2026）第 3 章：三角对话</a></div>
+                                    <div class="material-meta">必读 · 理论引导下的社会计算方法论</div>
+                                </div>
+                                <a class="material-link" href="https://www.tup.com.cn/bookscenter/book_11246901.html" target="_blank" rel="noopener">图书主页</a>
+                            </div>
+                            <div class="material-item has-link">
+                                <div class="material-icon"><svg viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></div>
+                                <div class="material-info">
+                                    <div class="material-name"><a class="material-name" href="https://arxiv.org/abs/2005.11401" target="_blank" rel="noopener">Lewis, P. et al. (2020). "Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks." <i>NeurIPS 2020</a></div>
+                                    <div class="material-meta">选读 · RAG 原始论文</div>
+                                </div>
+                                <a class="material-link" href="https://arxiv.org/abs/2005.11401" target="_blank" rel="noopener">原文</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ============ Phase 2 · Design（W4-5） ============ -->
+        <div class="section">
+            <div class="section-header">
+                <div class="section-icon"><svg viewBox="0 0 24 24"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="M2 2l7.586 7.586"/><circle cx="11" cy="11" r="2"/></svg></div>
+                <div class="section-title">Design · 选题 + 研究设计</div>
+                <span class="phase-weeks">W4 – W5</span>
+            </div>
+
+            <div class="week-card" id="w4">
+                <div class="week-head">
+                    <span class="week-num">W4</span>
+                    <div class="week-info">
+                        <div class="week-title">发现空白→凝练问题 — gap 分析多智能体</div>
+                        <div class="week-deliverable">本周交付：研究问题陈述（含 Gap 证据表与协变量结构）+ 子智能体核验日志与人工修正点记录</div>
+                    </div>
+                    <span class="badge badge-progress">待发布</span>
+                </div>
+                <div class="week-body">
+                    <div class="material-group">
+                        <div class="material-group-title">实验文档</div>
+                        <div class="material-list">
+                            <div class="material-item is-pending">
+                                <div class="material-icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg></div>
+                                <div class="material-info">
+                                    <div class="material-name">实验指导书：gap 分析多智能体配置与运行（1 主 Agent + 6 子智能体，基于 opencode agents）</div>
+                                    <div class="material-meta">PDF · 抽取→标注→核验→侦察→凝练，Audit Scribe 全程留痕</div>
+                                </div>
+                                <span class="material-status">待发布</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="material-group">
+                        <div class="material-group-title">数据</div>
+                        <div class="material-list">
+                            <div class="material-item is-pending">
+                                <div class="material-icon"><svg viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg></div>
+                                <div class="material-info">
+                                    <div class="material-name">教学示例综述语料（gap 分析流水线输入）</div>
+                                    <div class="material-meta">ZIP / Markdown</div>
+                                </div>
+                                <span class="material-status">待发布</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="material-group">
+                        <div class="material-group-title">阅读资料</div>
+                        <div class="material-list">
+                            <div class="material-item has-link">
+                                <div class="material-icon"><svg viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></div>
+                                <div class="material-info">
+                                    <div class="material-name"><a class="material-name" href="https://www.tup.com.cn/bookscenter/book_11246901.html" target="_blank" rel="noopener">罗家德等（2026）第 4 章：社会计算驱动的研究方法</a></div>
+                                    <div class="material-meta">必读 · 研究类型图谱，为 gap 类型标注提供坐标系</div>
+                                </div>
+                                <a class="material-link" href="https://www.tup.com.cn/bookscenter/book_11246901.html" target="_blank" rel="noopener">图书主页</a>
+                            </div>
+                            <div class="material-item has-link">
+                                <div class="material-icon"><svg viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></div>
+                                <div class="material-info">
+                                    <div class="material-name"><a class="material-name" href="https://doi.org/10.1177/1350508410372155" target="_blank" rel="noopener">Sandberg, J. &amp; Alvesson, M. (2011). "Ways of constructing research questions: gap-spotting or problematization?" <i>Organization</i>, 18(1), 23-44</a></div>
+                                    <div class="material-meta">必读 · 选题方法论</div>
+                                </div>
+                                <a class="material-link" href="https://doi.org/10.1177/1350508410372155" target="_blank" rel="noopener">原文</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="week-card" id="w5">
+                <div class="week-head">
+                    <span class="week-num">W5</span>
+                    <div class="week-info">
+                        <div class="week-title">研究设计 — 方法审计配置与"生成→审计→裁决→定稿"循环</div>
+                        <div class="week-deliverable">本周交付：研究设计方案（逐字段带依据、置信度标注、修订痕迹）+ 个人方法审计配置 v1</div>
+                    </div>
+                    <span class="badge badge-progress">待发布</span>
+                </div>
+                <div class="week-body">
+                    <div class="material-group">
+                        <div class="material-group-title">实验文档</div>
+                        <div class="material-list">
+                            <div class="material-item is-pending">
+                                <div class="material-icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg></div>
+                                <div class="material-info">
+                                    <div class="material-name">实验指导书：五阶段循环（路由确认→草案生成→检索型审计→学生裁决与定稿→记录与交付）</div>
+                                    <div class="material-meta">PDF · 五层五角色设计-审计架构</div>
+                                </div>
+                                <span class="material-status">待发布</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="material-group">
+                        <div class="material-group-title">数据</div>
+                        <div class="material-list">
+                            <div class="material-item is-pending">
+                                <div class="material-icon"><svg viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg></div>
+                                <div class="material-info">
+                                    <div class="material-name">方法审计配置模板与示例</div>
+                                    <div class="material-meta">YAML / Markdown</div>
+                                </div>
+                                <span class="material-status">待发布</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="material-group">
+                        <div class="material-group-title">阅读资料</div>
+                        <div class="material-list">
+                            <div class="material-item has-link">
+                                <div class="material-icon"><svg viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></div>
+                                <div class="material-info">
+                                    <div class="material-name"><a class="material-name" href="https://www.tup.com.cn/bookscenter/book_11246901.html" target="_blank" rel="noopener">罗家德等（2026）第 5 章：理论探索的范式</a></div>
+                                    <div class="material-meta">必读 · 反复三角对话的研究设计案例</div>
+                                </div>
+                                <a class="material-link" href="https://www.tup.com.cn/bookscenter/book_11246901.html" target="_blank" rel="noopener">图书主页</a>
+                            </div>
+                            <div class="material-item has-link">
+                                <div class="material-icon"><svg viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></div>
+                                <div class="material-info">
+                                    <div class="material-name"><a class="material-name" href="https://press.princeton.edu/books/paperback/9780691120355/mostly-harmless-econometrics" target="_blank" rel="noopener">Angrist, J.D. &amp; Pischke, J.S. (2009). <i>Mostly Harmless Econometrics</i>. Princeton University Press</a></div>
+                                    <div class="material-meta">选读 · 因果推断方法论</div>
+                                </div>
+                                <a class="material-link" href="https://press.princeton.edu/books/paperback/9780691120355/mostly-harmless-econometrics" target="_blank" rel="noopener">出版社页面</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ============ Phase 3 · Implementation（W6-7） ============ -->
+        <div class="section">
+            <div class="section-header">
+                <div class="section-icon"><svg viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div>
+                <div class="section-title">Implementation · 研究实施</div>
+                <span class="phase-weeks">W6 – W7</span>
+            </div>
+
+            <div class="week-card" id="w6">
+                <div class="week-head">
+                    <span class="week-num">W6</span>
+                    <div class="week-info">
+                        <div class="week-title">研究实施（上）— 数据集（三路径）+ 实证（StatsPAI）</div>
+                        <div class="week-deliverable">本周交付：数据集（含数据来源路径选择说明）+ 实证结果（StatsPAI 代码与出版级表格）+ 数据 Skill</div>
+                    </div>
+                    <span class="badge badge-progress">待发布</span>
+                </div>
+                <div class="week-body">
+                    <div class="material-group">
+                        <div class="material-group-title">实验文档</div>
+                        <div class="material-list">
+                            <div class="material-item is-pending">
+                                <div class="material-icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg></div>
+                                <div class="material-info">
+                                    <div class="material-name">实验指导书：数据三路径选择与论证、StatsPAI 实证工作流（agent-native 计量）</div>
+                                    <div class="material-meta">PDF · 回归 / DID / IV / 断点回归 / 合成控制 / 匹配 / DML</div>
+                                </div>
+                                <span class="material-status">待发布</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="material-group">
+                        <div class="material-group-title">数据</div>
+                        <div class="material-list">
+                            <div class="material-item is-pending">
+                                <div class="material-icon"><svg viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg></div>
+                                <div class="material-info">
+                                    <div class="material-name">StatsPAI 内置经典数据集（Card 1995、LaLonde/NSW、mpdta 等 14 个）</div>
+                                    <div class="material-meta">Python 包内置</div>
+                                </div>
+                                <span class="material-status">待发布</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="material-group">
+                        <div class="material-group-title">阅读资料</div>
+                        <div class="material-list">
+                            <div class="material-item has-link">
+                                <div class="material-icon"><svg viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></div>
+                                <div class="material-info">
+                                    <div class="material-name"><a class="material-name" href="https://doi.org/10.1371/journal.pcbi.1005510" target="_blank" rel="noopener">Wilson, G. et al. (2017). "Good Enough Practices in Scientific Computing." <i>PLOS Computational Biology</i>, 13(6), e1005510</a></div>
+                                    <div class="material-meta">必读 · 数据工作规范</div>
+                                </div>
+                                <a class="material-link" href="https://doi.org/10.1371/journal.pcbi.1005510" target="_blank" rel="noopener">原文</a>
+                            </div>
+                            <div class="material-item has-link">
+                                <div class="material-icon"><svg viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></div>
+                                <div class="material-info">
+                                    <div class="material-name"><a class="material-name" href="https://doi.org/10.1017/S1047198722001063" target="_blank" rel="noopener">Argyle, L.P. et al. (2023). "Out of One, Many: Using Language Models to Simulate Human Samples." <i>Political Analysis</i>, 31(3), 337-351</a></div>
+                                    <div class="material-meta">必读 · 类人调研数据（silicon sampling）的方法论先例</div>
+                                </div>
+                                <a class="material-link" href="https://doi.org/10.1017/S1047198722001063" target="_blank" rel="noopener">原文</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="week-card" id="w7">
+                <div class="week-head">
+                    <span class="week-num">W7</span>
+                    <div class="week-info">
+                        <div class="week-title">研究实施（下）— 仿真（DeepSeek Harness + Mesa + LLM 智能体）</div>
+                        <div class="week-deliverable">本周交付：研究实施结果（Mesa 基线模型 + Mesa-LLM 仿真结果 + LLM 调用日志 + 验证报告 + 分析 Skill + dsh 使用记录）</div>
+                    </div>
+                    <span class="badge badge-progress">待发布</span>
+                </div>
+                <div class="week-body">
+                    <div class="material-group">
+                        <div class="material-group-title">实验文档</div>
+                        <div class="material-list">
+                            <div class="material-item is-pending">
+                                <div class="material-icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg></div>
+                                <div class="material-info">
+                                    <div class="material-name">实验指导书：Mesa 基线模型开发（dsh 为 AI 辅助编程工具）→ Mesa-LLM 接入 → 规则驱动 vs LLM 驱动对比</div>
+                                    <div class="material-meta">PDF · 含 Trajectory 留痕与 LLM 调用日志规范</div>
+                                </div>
+                                <span class="material-status">待发布</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="material-group">
+                        <div class="material-group-title">数据</div>
+                        <div class="material-list">
+                            <div class="material-item is-pending">
+                                <div class="material-icon"><svg viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg></div>
+                                <div class="material-info">
+                                    <div class="material-name">仿真输出示例数据（DataCollector 指标 + LLM 调用日志样例）</div>
+                                    <div class="material-meta">CSV / JSON</div>
+                                </div>
+                                <span class="material-status">待发布</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="material-group">
+                        <div class="material-group-title">阅读资料</div>
+                        <div class="material-list">
+                            <div class="material-item has-link">
+                                <div class="material-icon"><svg viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></div>
+                                <div class="material-info">
+                                    <div class="material-name"><a class="material-name" href="https://www.science.org/doi/10.1126/science.aaz8172" target="_blank" rel="noopener">Lazer, D. et al. (2020). "Computational social science: Obstacles and opportunities." <i>Science</i>, 369(6507), 1060-1062</a></div>
+                                    <div class="material-meta">必读 · 范式十年反思：数据质量、伦理、可复现性</div>
+                                </div>
+                                <a class="material-link" href="https://www.science.org/doi/10.1126/science.aaz8172" target="_blank" rel="noopener">原文</a>
+                            </div>
+                            <div class="material-item has-link">
+                                <div class="material-icon"><svg viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></div>
+                                <div class="material-info">
+                                    <div class="material-name"><a class="material-name" href="https://jasss.surrey.ac.uk/11/4/12.html" target="_blank" rel="noopener">Epstein, J.M. (2008). "Why Model?" <i>JASSS</i>, 11(4)</a></div>
+                                    <div class="material-meta">选读 · 仿真的认识论价值</div>
+                                </div>
+                                <a class="material-link" href="https://jasss.surrey.ac.uk/11/4/12.html" target="_blank" rel="noopener">原文</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ============ Phase 4 · Writing & Integration（W8-9） ============ -->
+        <div class="section">
+            <div class="section-header">
+                <div class="section-icon"><svg viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg></div>
+                <div class="section-title">Writing &amp; Integration · 论文写作 + 整合展示</div>
+                <span class="phase-weeks">W8 – W9</span>
+            </div>
+
+            <div class="week-card" id="w8">
+                <div class="week-head">
+                    <span class="week-num">W8</span>
+                    <div class="week-info">
+                        <div class="week-title">论文写作（上）— LaTeX + AI Agent 协作写作</div>
+                        <div class="week-deliverable">本周交付：论文初稿（LaTeX+PDF）+ 引用核验报告 + 复现包完整性清单 + AI 使用声明草稿 + AI4S 工具栈 v1</div>
+                    </div>
+                    <span class="badge badge-progress">待发布</span>
+                </div>
+                <div class="week-body">
+                    <div class="material-group">
+                        <div class="material-group-title">实验文档</div>
+                        <div class="material-list">
+                            <div class="material-item is-pending">
+                                <div class="material-icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg></div>
+                                <div class="material-info">
+                                    <div class="material-name">实验指导书：写作-审计双 Agent 工作流（Generator 与 Auditor 权限互斥）+ Zotero MCP 引用管理</div>
+                                    <div class="material-meta">PDF · 生成与核验分离</div>
+                                </div>
+                                <span class="material-status">待发布</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="material-group">
+                        <div class="material-group-title">数据</div>
+                        <div class="material-list">
+                            <div class="material-item is-pending">
+                                <div class="material-icon"><svg viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg></div>
+                                <div class="material-info">
+                                    <div class="material-name">论文模板与复现包结构示例</div>
+                                    <div class="material-meta">LaTeX / ZIP</div>
+                                </div>
+                                <span class="material-status">待发布</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="material-group">
+                        <div class="material-group-title">阅读资料</div>
+                        <div class="material-list">
+                            <div class="material-item has-link">
+                                <div class="material-icon"><svg viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></div>
+                                <div class="material-info">
+                                    <div class="material-name"><a class="material-name" href="https://www.tup.com.cn/bookscenter/book_11246901.html" target="_blank" rel="noopener">罗家德等（2026）第 6 章：验证理论的范式</a></div>
+                                    <div class="material-meta">必读 · 验证性研究的方法论，呼应实证收尾与论文写作</div>
+                                </div>
+                                <a class="material-link" href="https://www.tup.com.cn/bookscenter/book_11246901.html" target="_blank" rel="noopener">图书主页</a>
+                            </div>
+                            <div class="material-item has-link">
+                                <div class="material-icon"><svg viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></div>
+                                <div class="material-info">
+                                    <div class="material-name"><a class="material-name" href="https://press.uchicago.edu/ucp/books/book/chicago/C/bo23520378.html" target="_blank" rel="noopener">Booth, W.C., Colomb, G.G. &amp; Williams, J.M. (2008). <i>The Craft of Research</i>. University of Chicago Press</a></div>
+                                    <div class="material-meta">选读 · 学术写作方法论</div>
+                                </div>
+                                <a class="material-link" href="https://press.uchicago.edu/ucp/books/book/chicago/C/bo23520378.html" target="_blank" rel="noopener">出版社页面</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="week-card" id="w9">
+                <div class="week-head">
+                    <span class="week-num">W9</span>
+                    <div class="week-info">
+                        <div class="week-title">论文写作（下）— 修订 + 展示</div>
+                        <div class="week-deliverable">本周交付：论文终稿 + 论文评审 skill + 模拟评审意见与修订对照记录 + 工具栈仓库 + 反思报告</div>
+                    </div>
+                    <span class="badge badge-progress">待发布</span>
+                </div>
+                <div class="week-body">
+                    <div class="material-group">
+                        <div class="material-group-title">实验文档</div>
+                        <div class="material-list">
+                            <div class="material-item is-pending">
+                                <div class="material-icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg></div>
+                                <div class="material-info">
+                                    <div class="material-name">实验指导书：论文评审 skill 封装与五维模拟评审（结构/论证/贡献/方法/写作）</div>
+                                    <div class="material-meta">PDF · 含 AI 使用声明核验清单</div>
+                                </div>
+                                <span class="material-status">待发布</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="material-group">
+                        <div class="material-group-title">数据</div>
+                        <div class="material-list">
+                            <div class="material-item is-pending">
+                                <div class="material-icon"><svg viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg></div>
+                                <div class="material-info">
+                                    <div class="material-name">期末展示模板与工具栈仓库结构示例</div>
+                                    <div class="material-meta">ZIP</div>
+                                </div>
+                                <span class="material-status">待发布</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="material-group">
+                        <div class="material-group-title">阅读资料</div>
+                        <div class="material-list">
+                            <div class="material-item has-link">
+                                <div class="material-icon"><svg viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></div>
+                                <div class="material-info">
+                                    <div class="material-name"><a class="material-name" href="https://doi.org/10.1177/014107810609900416" target="_blank" rel="noopener">Smith, R. (2006). "Peer review: a flawed process at the heart of science and the public sphere." <i>Journal of the Royal Society of Medicine</i>, 99(4), 178-182</a></div>
+                                    <div class="material-meta">必读 · 同侪评审的本质</div>
+                                </div>
+                                <a class="material-link" href="https://doi.org/10.1177/014107810609900416" target="_blank" rel="noopener">原文</a>
+                            </div>
+                            <div class="material-item has-link">
+                                <div class="material-icon"><svg viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></div>
+                                <div class="material-info">
+                                    <div class="material-name"><a class="material-name" href="https://doi.org/10.1371/journal.pcbi.1003285" target="_blank" rel="noopener">Sandve, G.K. et al. (2013). "Ten Simple Rules for Reproducible Computational Research." <i>PLOS Computational Biology</i>, 9(10), e1003285</a></div>
+                                    <div class="material-meta">必读 · 可复现性</div>
+                                </div>
+                                <a class="material-link" href="https://doi.org/10.1371/journal.pcbi.1003285" target="_blank" rel="noopener">原文</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ============================================================
+             每周材料更新模板
+             1. 文件放入 materials/week0X/ 目录（如 materials/week01/lab.pdf）
+             2. 复制下方条目模板到对应 week-card 的 material-list 中
+             3. 删除原"待发布"占位条目，并把 week-card 头部徽章
+                从 badge-progress 待发布 改为 badge-live 已发布
+
+             本地文件条目模板：
+             <div class="material-item has-link">
+                 <div class="material-icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg></div>
+                 <div class="material-info">
+                     <div class="material-name"><a class="material-name" href="materials/week01/lab.pdf" target="_blank" rel="noopener">实验指导书标题</a></div>
+                     <div class="material-meta">PDF · 1.2 MB</div>
+                 </div>
+                 <a class="material-link" href="materials/week01/lab.pdf" target="_blank" rel="noopener">查看</a>
+             </div>
+
+             阅读资料（外部链接）条目模板：
+             <div class="material-item has-link">
+                 <div class="material-icon"><svg viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></div>
+                 <div class="material-info">
+                     <div class="material-name"><a class="material-name" href="https://..." target="_blank" rel="noopener">论文标题（作者 · 年份）</a></div>
+                     <div class="material-meta">期刊 / 会议 · 必读</div>
+                 </div>
+                 <a class="material-link" href="https://..." target="_blank" rel="noopener">原文</a>
+             </div>
+        ============================================================ -->
+    </main>
+
+    <footer>
+        人工智能大模型应用 · 2026秋季课程
+        <span style="display:block;margin-top:4px;font-size:0.9em;opacity:0.7;">最后更新 2026-11-06</span>
+    </footer>
+</body>
+</html>
