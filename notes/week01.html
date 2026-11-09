@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>W1 授课要点 — 工具准备：AI 工作环境搭建</title>
+    <meta name="description" content="第 1 周授课要点：AI4S 范式入门、政策背景与前沿案例、社会计算三角对话、环境搭建与分组实验。支持课堂翻页投影与课后滚动阅读。">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="stylesheet" href="../style.css?v=5">
+</head>
+<body>
+    <nav>
+        <div class="nav-inner">
+            <a href="../index.html" class="logo">
+                <div class="logo-icon">
+                    <svg width="26" height="26" viewBox="0 0 32 32" fill="none">
+                        <circle cx="16" cy="16" r="2.8" fill="white"/>
+                        <ellipse cx="16" cy="16" rx="13" ry="5" stroke="white" stroke-width="1.5"/>
+                        <ellipse cx="16" cy="16" rx="13" ry="5" stroke="white" stroke-width="1.5" transform="rotate(60 16 16)"/>
+                        <ellipse cx="16" cy="16" rx="13" ry="5" stroke="white" stroke-width="1.5" transform="rotate(120 16 16)"/>
+                        <circle cx="27.5" cy="13" r="1.4" fill="#06b6d4"/>
+                        <circle cx="6.5" cy="19.5" r="1.4" fill="#06b6d4"/>
+                    </svg>
+                </div>
+                <span class="logo-text"><span class="logo-title">人工智能大模型应用</span><span class="logo-subtitle">AI for Social Science</span></span>
+            </a>
+            <input type="checkbox" id="nav-toggle" class="nav-toggle">
+            <label for="nav-toggle" class="nav-toggle-label" aria-label="菜单">
+                <span></span><span></span><span></span>
+            </label>
+            <ul class="nav-links">
+                <li><a href="../intro.html">课程简介</a></li>
+                <li><a href="../timeline.html">项目之旅</a></li>
+                <li><a href="../weekly.html" class="active">每周材料</a></li>
+                <li><a href="../projects.html">精彩项目</a></li>
+                <li><a href="../resources.html">课程资源</a></li>
+                <li><a href="../papers.html">学术前沿</a></li>
+                <li><a href="../news.html">产业新闻</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="notes-main">
+        <div class="notes-head">
+            <span class="notes-week-badge">W1</span>
+            <h1 class="notes-title">授课要点 · 工具准备 — AI 工作环境搭建</h1>
+        </div>
+        <p class="notes-subtitle">第 1 周课堂内容纲要（3 节课）· 第 1 节范式定向（讲授）· 第 2 节案例预演与环境演示（投屏观察）· 第 3 节分组实验。点击「翻页模式」可像 PPT 一样逐页投影（键盘 ← → 翻页，F 全屏）；默认滚动模式适合课后复习。</p>
+
+        <div class="notes-toolbar">
+            <button class="notes-btn primary" id="mode-toggle" type="button">📽️ 翻页模式</button>
+            <button class="notes-btn" id="fs-btn" type="button">⛶ 全屏投影</button>
+            <div class="notes-pager">
+                <button class="notes-btn" id="prev-btn" type="button">‹ 上一页</button>
+                <span class="notes-page-indicator" id="page-indicator">1 / 11</span>
+                <button class="notes-btn" id="next-btn" type="button">下一页 ›</button>
+            </div>
+        </div>
+
+        <!-- ============ Slide 1 ============ -->
+        <section class="slide">
+            <div class="slide-kicker">W1 · 第1节 · OPENING</div>
+            <h2>开场：这学期做到哪里去</h2>
+            <ul>
+                <li><strong>学期终点</strong>：围绕个人科研项目构建 AI4S 工具栈，并产出科研成果（论文 + 工具栈仓库）</li>
+                <li><strong>更进一步</strong>：鼓励大家在最后一周之前完成<strong>投稿</strong></li>
+                <li>今天是第 1 周：不是"装软件"，而是为 AI4S 科研全流程奠定工具基础</li>
+            </ul>
+            <div class="callout"><strong>课堂约定</strong>：AI 是副驾驶，方向盘在你手里——"人判断、AI 执行"，每一步生成结果都要经过你的审计与裁决。</div>
+        </section>
+
+        <!-- ============ Slide 2 ============ -->
+        <section class="slide">
+            <div class="slide-kicker">W1 · 第1节 · COURSE MAP</div>
+            <h2>课程总览：9 周主线</h2>
+            <ul>
+                <li><strong>Foundation（W1–W3）</strong>：工具准备 → 文献检索 → RAG 知识库 + AI 综述</li>
+                <li><strong>Design（W4–W5）</strong>：gap 分析与假设候选生成 → 研究设计与"生成→审计→裁决→定稿"循环</li>
+                <li><strong>Implementation（W6–W8）</strong>：数据集 + 实证（StatsPAI）→ 仿真（Mesa + LLM 智能体）→ LangGraph 科研智能体设计（ReAct + 人工断点）</li>
+                <li><strong>Writing（W9）</strong>：论文写作全链条（起草·评审·修订·展示）</li>
+            </ul>
+            <p>每一周都有明确<strong>交付物</strong>，所有交付物最终汇入期末论文与展示。</p>
+        </section>
+
+        <!-- ============ Slide 3 ============ -->
+        <section class="slide">
+            <div class="slide-kicker">W1 · 第1节 · POLICY &amp; FRONTIER</div>
+            <h2>政策背景与前沿案例</h2>
+            <ul>
+                <li><strong>政策</strong>：国务院<a href="https://www.gov.cn/gongbao/2025/issue_12266/202509/content_7039598.html" target="_blank" rel="noopener">《关于深入实施"人工智能+"行动的意见》</a>（国发〔2025〕11 号）——"加快探索人工智能驱动的新型科研范式"；"推动哲学社会科学研究方法向人机协同模式转变"。AI4S 不是课程自造的概念，而是国家政策明确要求的科研范式转变</li>
+                <li><strong>文献总纲</strong>：Wang, H. et al. (2023) "Scientific discovery in the age of artificial intelligence." <i>Nature</i>, 620, 47-60——AI 贯穿科学发现全流程：生成/筛选假设 → 设计与执行实验 → 分析数据 → 解读结果；科学反过来为 AI 提出新问题</li>
+                <li><strong>前沿案例</strong>：Gottweis et al. (2026) <a href="https://www.nature.com/articles/s41586-026-10644-y" target="_blank" rel="noopener">"Co-Scientist"（<i>Nature</i>，开放获取）</a>——多智能体（Generation / Reflection / Ranking / Evolution…）生成→辩论→淘汰假设，<strong>scientist-in-the-loop</strong>：判断权与湿实验验证始终在人手里；三个生物医药任务端到端验证</li>
+            </ul>
+            <div class="callout"><strong>教学落点</strong>：AI 提假设 → 人判断 → 数据/实验验证的闭环，就是本课程要为社科研究复刻的工作模式。</div>
+        </section>
+
+        <!-- ============ Slide 4 ============ -->
+        <section class="slide">
+            <div class="slide-kicker">W1 · 第1节 · PARADIGM</div>
+            <h2>AI4S 范式：不是"用 AI 写代码"</h2>
+            <ul>
+                <li>AI4S 是用 AI <strong>重构科研全流程</strong>——AI 是"研究伙伴"，不是工具箱</li>
+                <li>人机交互姿态：<strong>人判断、AI 执行</strong></li>
+                <li>以"大模型 vs 传统方法"的同题对比为例，第一周就建立方法论意识：<strong>方法选择是研究者的判断、结论可信度须可核验</strong></li>
+            </ul>
+        </section>
+
+        <!-- ============ Slide 5 ============ -->
+        <section class="slide">
+            <div class="slide-kicker">W1 · 第1节 · SOCIAL COMPUTING</div>
+            <h2>社会计算：社科如何被数据与 AI 重构</h2>
+            <ul>
+                <li><strong>内涵</strong>：社会科学理论与研究方法 × 大数据分析 × 预测模型熔为一炉（罗家德等 2018；2026）</li>
+                <li><strong>研究对象三个分类</strong>：① 人的决策以及人与人的互动；② 机器/AI 模型的决策以及 AI 与 AI 的互动；③ 人机交互与人机共同构成的网络</li>
+                <li><strong>两个方向</strong>：社会增强计算、计算增强社会性——社会计算甚至涵盖了社科本身，又是社科与计算机的交叉</li>
+                <li><strong>与 AI4S 的吻合</strong>：AI 承担挖掘、结构化、建模的执行，研究者负责理论判断与扎根真相（ground truth）的校准——"三角对话"正是 AI4S 的社会科学版本</li>
+            </ul>
+        </section>
+
+        <!-- ============ Slide 6 ============ -->
+        <section class="slide">
+            <div class="slide-kicker">W1 · 第1节 · TRIANGLE</div>
+            <h2>三角对话：数据与数据分析的重要性</h2>
+            <ul>
+                <li><strong>理论给数据挖掘议题，扎根真相靠人</strong>：风投产业网实例——德菲尔专家访谈评定 42 家"产业领袖"作 ground truth，7 指标聚类 accuracy 0.965 / recall 0.83，远胜单一指标；这类小样本质性工作是 AI 替代不了的，正是"人判断"的位置</li>
+                <li><strong>数据挖掘验证理论、启发新理论</strong>：嵌入理论假设由挖掘结果导出并被合作数据验证</li>
+                <li><strong>理论指导预测模型并界定推论边界</strong>：把关系/结构嵌入网络动态模拟，预测显著优于随机图基线</li>
+            </ul>
+            <div class="callout"><strong>落点</strong>：能作出推论的是理论，不是数据本身；但没有数据与分析，理论既无从检验也无从推论——这就是人人要动手做数据分析的原因，也正是"人判断、AI 执行"的分工。</div>
+        </section>
+
+        <!-- ============ Slide 7 ============ -->
+        <section class="slide">
+            <div class="slide-kicker">W1 · 第1节 · FULL-PROCESS MAP</div>
+            <h2>社科科研全流程五环节 · 课堂互动</h2>
+            <ul>
+                <li><strong>文献 → 选题 → 设计 → 实施 → 写作</strong>五个环节，对应 9 周课程安排</li>
+                <li>💡 互动（6 分钟）：邀请 2–3 位同学分享自己应用 AI 辅助科研的经验——在哪个环节用了什么工具、AI 替你做了什么、哪里出过错或不靠谱</li>
+                <li>教师把分享逐条归位到五个模块：每个环节都能被 AI 增强，但<strong>判断权在自己</strong></li>
+            </ul>
+            <div class="callout"><strong>方法论主线（贯穿 9 周）</strong>：生成 → 审计 → 裁决 → 留痕。从 W1 的脚本对比，到 W9 的模拟评审，都是同一个循环。</div>
+        </section>
+
+        <!-- ============ Slide 8 ============ -->
+        <section class="slide">
+            <div class="slide-kicker">W1 · 第2节 · DEMO（教师投屏，学生观察记录）</div>
+            <h2>案例预演 + 工具环境演示</h2>
+            <ul>
+                <li><strong>案例预演（8 min）</strong>：Streamlit 运行 <a href="../materials/week01/case-nlp.zip" download><code>case-nlp/app.py</code>（📦 案例包下载）</a>——12.4 万条光线传媒股吧评论：词典法 vs LLM 法情感打分（重点看"利好出尽""割韭菜"等反讽、行情黑话上的分歧）→ 每日情绪曲线 → 情绪与股价相关性。观察任务：同一批文本，两种方法为何结论不同？</li>
+                <li><strong>Python 3.13 + <a href="https://docs.cursor.com/" target="_blank" rel="noopener">Cursor 文档</a>（13 min）</strong>：不装 Anaconda、不点官网首页 3.14；<code>Ctrl+Shift+P → Python: Select Interpreter</code> 选 Python313；<code>pip install pandas jieba</code></li>
+                <li><strong><a href="https://opencode.ai/docs/" target="_blank" rel="noopener">opencode 文档</a>（13 min）</strong>：Node.js LTS → <code>npm install -g opencode-ai</code>；项目根目录启动，<code>/connect</code> <code>/model</code> <code>/session</code> <code>/compact</code> 四条命令；工作模式：<strong>对话→改文件→运行</strong>，不是网页版 Chat 只停在对话</li>
+                <li><strong>第一个脚本（8 min）</strong>：让 opencode 读 <code>cleaned_300251_comments.csv</code> 现场生成 <code>mini_emotion.py</code>——「涨停」6606 条集中在 2015、「韭菜」集中在 2018：不同关键词规则给出不同"情绪"图景，正是两种方法分歧的根源</li>
+            </ul>
+        </section>
+
+        <!-- ============ Slide 9 ============ -->
+        <section class="slide">
+            <div class="slide-kicker">W1 · 第3节 · GROUP LAB（3–4 人一组，轮流操作）</div>
+            <h2>分组实验：感受一次"对话→改文件→运行"</h2>
+            <ul>
+                <li><strong>实验一 · 同题不同问（15 min）</strong>：同一任务两种问法——模糊问法（"帮我分析一下这些股吧评论"）vs 明确问法（指定路径、两列、按年分组、输出格式）。对比输出，归纳三条经验：<strong>说清楚要什么、给足上下文、给足约束</strong></li>
+                <li><strong>实验二 · 让 AI 改脚本（10 min）</strong>：把脚本改成词典法每日情绪分数——读入正负词典 + jieba 分词打分 + 按日汇总，与案例"每日情绪曲线"直接呼应</li>
+                <li><strong>卡住顺序</strong>：问 AI（附报错）→ 组内互助 → 举手教师</li>
+            </ul>
+            <div class="callout"><strong>为什么重要</strong>：这个闭环是后续科研编程的底座——W2 检索脚本、W6 数据清洗、W8 论文起草，都是同一工作模式。</div>
+        </section>
+
+        <!-- ============ Slide 10 ============ -->
+        <section class="slide">
+            <div class="slide-kicker">W1 · 课后 · SETUP</div>
+            <h2>环境搭建清单（课后按 setup.md 完成）</h2>
+            <ul>
+                <li>Python 3.13（不装 Anaconda、不选 3.14）+ Cursor（选中 Python313 解释器）</li>
+                <li>Node.js LTS → opencode（默认免费模型可跟课，<code>/connect</code> 接入模型）</li>
+                <li>Zotero 或同类文献管理工具（W2/W3 用到）</li>
+                <li>最简版 <a href="https://opencode.ai/docs/zh-cn/rules/" target="_blank" rel="noopener"><code>AGENTS.md</code> 官方规则</a>（项目目标 + 技术栈 + 目录约定，3–5 行起步）——opencode 打开时自动读取作为项目上下文</li>
+            </ul>
+            <pre><code>python --version        # 3.13.x
+python -m pip install pandas jieba
+node -v                 # v24.x
+npm install -g opencode-ai
+opencode --version      # 截图留档：六步验收</code></pre>
+            <div class="callout"><strong>排障</strong>：<code>python</code> 弹商店→关应用执行别名；PowerShell 禁 npm→用 <code>npm.cmd</code>；卡住先问 AI（附报错）→ 同学互助 → 课程群提问。详见 <a href="../materials/week01/setup.md" download>materials/week01/setup.md（MD 下载）</a>。</div>
+        </section>
+
+        <!-- ============ Slide 11 ============ -->
+        <section class="slide">
+            <div class="slide-kicker">W1 · WRAP-UP</div>
+            <h2>本周交付 · 课后练习 · 下周预告</h2>
+            <ul>
+                <li>✅ <strong>工具环境就绪</strong>（评分锚点）：六步验收截图——opencode/cursor 可运行、Python 3.13.x、pandas + jieba、模型可连、至少一个 Prompt 驱动脚本跑通</li>
+                <li>✅ <strong>最简版 AGENTS.md</strong>（本周不提交，W3 检查时作为环境就绪与方法论锚定证据）</li>
+                <li>📖 <strong>方法论阅读</strong>（反思日志须回应）：罗家德等（2026）第 1–2 章；Lazer et al. (2009)</li>
+                <li>📕 <strong>课后必读</strong>（下周同学来课堂分享）：Bail, C. A. (2024) <a href="https://www.pnas.org/doi/10.1073/pnas.2314021121" target="_blank" rel="noopener">"Can Generative AI improve social science?" <i>PNAS</i>, 121(21), e2314021121（开放获取）</a>——带着自己的判断来：生成式 AI 能为社科研究做什么、不能做什么</li>
+                <li>📌 下周（W2）：文献检索是方法论（PRISMA 流程），不是"搜一下"——检索式构建与学术 API；本周"对话→改文件→运行"就是写检索脚本的基础</li>
+            </ul>
+            <div class="callout"><strong>提醒</strong>：本周不需要提交作业，但 W2 课前须环境就绪，否则下周跟不动检索脚本。</div>
+        </section>
+
+        <div class="notes-foot-nav">
+            <span></span>
+            <a href="../weekly.html">← 返回每周材料</a>
+            <span></span>
+        </div>
+    </main>
+
+    <footer>
+        人工智能大模型应用 · 2026秋季课程
+        <span style="display:block;margin-top:4px;font-size:0.9em;opacity:0.7;">最后更新 2026-11-09</span>
+    </footer>
+
+    <script>
+    (function () {
+        var main = document.querySelector('.notes-main');
+        var slides = Array.prototype.slice.call(document.querySelectorAll('.slide'));
+        var indicator = document.getElementById('page-indicator');
+        var prevBtn = document.getElementById('prev-btn');
+        var nextBtn = document.getElementById('next-btn');
+        var modeBtn = document.getElementById('mode-toggle');
+        var fsBtn = document.getElementById('fs-btn');
+        var idx = 0;
+
+        function savedMode() {
+            try { return localStorage.getItem('notes-mode') || 'scroll'; }
+            catch (e) { return 'scroll'; }
+        }
+
+        function isSlideMode() { return main.classList.contains('slide-mode'); }
+
+        function setMode(mode) {
+            main.classList.toggle('slide-mode', mode === 'slide');
+            try { localStorage.setItem('notes-mode', mode); } catch (e) {}
+            modeBtn.textContent = mode === 'slide' ? '📖 滚动模式' : '📽️ 翻页模式';
+            show(idx, false);
+        }
+
+        function show(i, scroll) {
+            idx = Math.max(0, Math.min(slides.length - 1, i));
+            slides.forEach(function (s, k) { s.classList.toggle('current', k === idx); });
+            indicator.textContent = (idx + 1) + ' / ' + slides.length;
+            if (scroll && !isSlideMode()) {
+                slides[idx].scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        }
+
+        prevBtn.addEventListener('click', function () { show(idx - 1, true); });
+        nextBtn.addEventListener('click', function () { show(idx + 1, true); });
+
+        modeBtn.addEventListener('click', function () {
+            setMode(isSlideMode() ? 'scroll' : 'slide');
+        });
+
+        function toggleFullscreen() {
+            if (document.fullscreenElement) { document.exitFullscreen(); }
+            else if (document.documentElement.requestFullscreen) { document.documentElement.requestFullscreen(); }
+        }
+        fsBtn.addEventListener('click', toggleFullscreen);
+
+        document.addEventListener('keydown', function (e) {
+            if (e.target && /^(INPUT|TEXTAREA|SELECT)$/.test(e.target.tagName)) return;
+            if (e.key === 'ArrowRight' || e.key === 'PageDown' || e.key === ' ') {
+                if (isSlideMode()) { e.preventDefault(); show(idx + 1, false); }
+            } else if (e.key === 'ArrowLeft' || e.key === 'PageUp') {
+                if (isSlideMode()) { e.preventDefault(); show(idx - 1, false); }
+            } else if (e.key === 'f' || e.key === 'F') {
+                toggleFullscreen();
+            }
+        });
+
+        setMode(savedMode());
+    })();
+    </script>
+</body>
+</html>

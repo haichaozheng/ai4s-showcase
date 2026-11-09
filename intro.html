@@ -10,7 +10,7 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://haichaozheng.github.io/ai4s-showcase/">
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
-    <link rel="stylesheet" href="style.css?v=3">
+    <link rel="stylesheet" href="style.css?v=4">
 </head>
 <body>
     <nav>
@@ -86,7 +86,7 @@
                 <h2 class="section-title">AI4S 工具栈五模块</h2>
             </div>
             <div class="card">
-                <p>工具栈按<strong>社科科研全流程</strong>组织为五个模块，大模型在每个模块中既是工具也是"研究伙伴"：<strong>文献智能</strong>（检索→阅读→综述）、<strong>研究选题</strong>（多智能体 gap 分析流水线，产出带证据锚点的 Gap 证据表）、<strong>研究设计</strong>（方法审计配置与"生成→审计→裁决→定稿"循环）、<strong>研究实施</strong>（数据三路径 + StatsPAI agent-native 计量 + Mesa/Mesa-LLM 智能体仿真）、<strong>论文写作</strong>（写作-审计双 Agent，生成与核验分离），并有 <strong>AI 系统评估</strong>嵌入研究实施各步作为质量保障。</p>
+                <p>工具栈按<strong>社科科研全流程</strong>组织为五个模块，大模型在每个模块中既是工具也是"研究伙伴"：<strong>文献智能</strong>（检索→阅读→综述）、<strong>研究选题</strong>（多智能体 gap 分析与假设候选生成流水线，Co-Scientist 式"生成→反方批评→人工筛选"，产出带证据锚点的 Gap 证据表）、<strong>研究设计</strong>（方法审计配置与"生成→审计→裁决→定稿"循环）、<strong>研究实施</strong>（数据三路径 + StatsPAI agent-native 计量 + Mesa/Mesa-LLM 智能体仿真）、<strong>论文写作</strong>（写作-审计双 Agent，生成与核验分离），并有 <strong>AI 系统评估</strong>嵌入研究实施各步作为质量保障；W8 用 <strong>LangGraph</strong> 把多智能体升级为严肃实现的科研智能体系统。</p>
             </div>
         </div>
 
@@ -98,7 +98,7 @@
                 <h2 class="section-title">共同 AI 基础工具栈</h2>
             </div>
             <div class="card">
-                <p>六项 AI 基础能力随科研流程<strong>渐进式融入</strong>，而非单独设课：<strong>Prompt Engineering</strong> 与 <strong>AI 辅助编程</strong>（opencode/cursor，W7 增补 DeepSeek Harness 形成双 harness 对比）W1 起步 → <strong>RAG</strong> W3 文献综述 → <strong>Agent</strong> W4-W5 gap 分析多智能体与研究设计生成-审计多智能体，W6-W8 延续 → <strong>Skill</strong> W6-7 研究实施、W9 论文评审 → <strong>AI 系统评估</strong> W7 质量控制、嵌入各步验证。大模型贯穿全程，作为工具栈的核心支撑。</p>
+                <p>六项 AI 基础能力随科研流程<strong>渐进式融入</strong>，而非单独设课：<strong>Prompt Engineering</strong> 与 <strong>AI 辅助编程</strong>（opencode/cursor，W7 增补 DeepSeek Harness 形成双 harness 对比）W1 起步 → <strong>RAG</strong> W3 文献综述 → <strong>Agent</strong> W4-W5 gap 分析与假设候选生成多智能体、研究设计生成-审计多智能体，W6-W7 延续（调研数据生成/分析），W8 LangGraph 科研智能体设计，W9 写作-审计双 Agent → <strong>Skill</strong> W6-7 研究实施、W9 论文评审 → <strong>AI 系统评估</strong> W7 质量控制、嵌入各步验证。大模型贯穿全程，作为工具栈的核心支撑。</p>
             </div>
         </div>
 
@@ -134,14 +134,14 @@
                 <h2 class="section-title">评分结构一览</h2>
             </div>
             <div class="card">
-                <p><strong>总评 = 平时 50% + 期末 50%</strong>。平时：<strong>出勤与课堂参与 10%</strong>（9 周出勤 + 讨论参与度）+ <strong>阶段成果一：研究选题与研究设计（含文献综述）25%</strong>（W5，检索工具列表 + RAG 知识库 + 综述文稿 + gap 多智能体分析 + 研究问题陈述 + 研究设计方案）+ <strong>阶段成果二：个人科研工具栈汇总 15%</strong>（W8，五模块工具栈 v1 + 引用核验报告 + AI 使用声明）。期末：<strong>个人科研报告 50%</strong>（W9，论文终稿 + 工具栈仓库 + 反思报告）。文献综述不单独计分，作为 gap 分析语料输入计入阶段成果一。</p>
+                <p><strong>总评 = 平时 50% + 期末 50%</strong>。平时：<strong>出勤与课堂参与 10%</strong>（9 周出勤 + 讨论参与度）+ <strong>阶段成果一：研究选题与研究设计（含文献综述）25%</strong>（W5，检索工具列表 + RAG 知识库 + 综述文稿 + gap 多智能体分析 + 研究问题陈述 + 假设候选清单 + 研究设计方案）+ <strong>阶段成果二：个人科研工具栈汇总 15%</strong>（W8，覆盖文献检索、综述、空缺识别、假设构建、方法设计等环节的工具栈，其中至少 2 个为自设计工具并给出 GitHub 项目库）。期末：<strong>个人科研报告 50%</strong>（W9，论文初稿 + 终稿 + 引用核验报告 + AI 使用声明 + 论文评审 skill + 工具栈仓库 + 反思报告，含个人 AI4S 方法论框架重构图）。文献综述不单独计分，作为 gap 分析语料输入计入阶段成果一。</p>
             </div>
         </div>
     </main>
 
     <footer>
         人工智能大模型应用 · 2026秋季课程
-        <span style="display:block;margin-top:4px;font-size:0.9em;opacity:0.7;">最后更新 2026-11-06</span>
+        <span style="display:block;margin-top:4px;font-size:0.9em;opacity:0.7;">最后更新 2026-11-09</span>
     </footer>
 </body>
 </html>
