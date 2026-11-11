@@ -11,6 +11,12 @@
     <meta property="og:url" content="https://haichaozheng.github.io/ai4s-showcase/">
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="stylesheet" href="style.css?v=4">
+    <style>
+        .grading-list { list-style: none; padding: 0; margin: 14px 0 0; display: flex; flex-direction: column; gap: 10px; }
+        .grading-list li { position: relative; padding-left: 1.35em; line-height: 1.75; }
+        .grading-list li::before { content: "▸"; position: absolute; left: 0; top: 0; color: var(--accent); font-weight: 700; }
+        .grading-list .note { opacity: 0.75; font-size: 0.95em; }
+    </style>
 </head>
 <body>
     <nav>
@@ -134,7 +140,14 @@
                 <h2 class="section-title">评分结构一览</h2>
             </div>
             <div class="card">
-                <p><strong>总评 = 平时 50% + 期末 50%</strong>。平时：<strong>出勤与课堂参与 10%</strong>（9 周出勤 + 讨论参与度）+ <strong>阶段成果一：研究选题与研究设计（含文献综述）25%</strong>（W5，检索工具列表 + RAG 知识库 + 综述文稿 + gap 多智能体分析 + 研究问题陈述 + 假设候选清单 + 研究设计方案）+ <strong>阶段成果二：个人科研工具栈汇总 15%</strong>（W8，覆盖文献检索、综述、空缺识别、假设构建、方法设计等环节的工具栈，其中至少 2 个为自设计工具并给出 GitHub 项目库）。期末：<strong>个人科研报告 50%</strong>（W9，论文初稿 + 终稿 + 引用核验报告 + AI 使用声明 + 论文评审 skill + 工具栈仓库 + 反思报告，含个人 AI4S 方法论框架重构图）。文献综述不单独计分，作为 gap 分析语料输入计入阶段成果一。</p>
+                <p><strong>总评 = 平时 50% + 期末 50%</strong></p>
+                <ul class="grading-list">
+                    <li><strong>平时 · 出勤与课堂参与 10%</strong>：9 周出勤 + 讨论参与度</li>
+                    <li><strong>平时 · 阶段成果一：研究选题与研究设计（含文献综述）25%</strong>（W5）：检索工具列表 + RAG 知识库 + 综述文稿 + gap 多智能体分析 + 研究问题陈述 + 假设候选清单 + 研究设计方案</li>
+                    <li><strong>平时 · 阶段成果二：个人科研工具栈汇总 15%</strong>（W8）：覆盖文献检索、综述、空缺识别、假设构建、方法设计等环节的工具栈，其中至少 2 个为自设计工具并给出 GitHub 项目库</li>
+                    <li><strong>期末 · 个人科研报告 50%</strong>（W9）：论文初稿 + 终稿 + 引用核验报告 + AI 使用声明 + 论文评审 skill + 工具栈仓库 + 反思报告，含个人 AI4S 方法论框架重构图</li>
+                    <li class="note">文献综述不单独计分，作为 gap 分析语料输入计入阶段成果一。</li>
+                </ul>
             </div>
         </div>
     </main>
