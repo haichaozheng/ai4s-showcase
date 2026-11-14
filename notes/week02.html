@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>W2 授课要点 — 文献检索：检索工具与策略</title>
+    <meta name="description" content="第 2 周授课要点：文献检索方法论（Levy & Ellis Inputs 三要点）、用 opencode 开发结构化检索脚本、把检索方法沉淀成可复用 skill。支持课堂翻页投影与课后滚动阅读。">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="stylesheet" href="../style.css?v=5">
+</head>
+<body>
+    <nav>
+        <div class="nav-inner">
+            <a href="../index.html" class="logo">
+                <div class="logo-icon">
+                    <svg width="26" height="26" viewBox="0 0 32 32" fill="none">
+                        <circle cx="16" cy="16" r="2.8" fill="white"/>
+                        <ellipse cx="16" cy="16" rx="13" ry="5" stroke="white" stroke-width="1.5"/>
+                        <ellipse cx="16" cy="16" rx="13" ry="5" stroke="white" stroke-width="1.5" transform="rotate(60 16 16)"/>
+                        <ellipse cx="16" cy="16" rx="13" ry="5" stroke="white" stroke-width="1.5" transform="rotate(120 16 16)"/>
+                        <circle cx="27.5" cy="13" r="1.4" fill="#06b6d4"/>
+                        <circle cx="6.5" cy="19.5" r="1.4" fill="#06b6d4"/>
+                    </svg>
+                </div>
+                <span class="logo-text"><span class="logo-title">人工智能大模型应用</span><span class="logo-subtitle">AI for Social Science</span></span>
+            </a>
+            <input type="checkbox" id="nav-toggle" class="nav-toggle">
+            <label for="nav-toggle" class="nav-toggle-label" aria-label="菜单">
+                <span></span><span></span><span></span>
+            </label>
+            <ul class="nav-links">
+                <li><a href="../intro.html">课程简介</a></li>
+                <li><a href="../timeline.html">项目之旅</a></li>
+                <li><a href="../weekly.html" class="active">每周材料</a></li>
+                <li><a href="../projects.html">精彩项目</a></li>
+                <li><a href="../resources.html">课程资源</a></li>
+                <li><a href="../papers.html">学术前沿</a></li>
+                <li><a href="../news.html">产业新闻</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="notes-main">
+        <div class="notes-head">
+            <span class="notes-week-badge">W2</span>
+            <h1 class="notes-title">授课要点 · 文献检索 — 检索工具与策略</h1>
+        </div>
+        <p class="notes-subtitle">第 2 周课堂内容纲要（3 节课）· 第 1 节文献检索方法论（讲授 + 现场演示）· 第 2 节 AI 辅助编程深化：开发结构化检索脚本（师生共建）· 第 3 节 Skill 构建：把检索方法沉淀成可复用工具。点击「翻页模式」可像 PPT 一样逐页投影（键盘 ← → 翻页，F 全屏）；默认滚动模式适合课后复习。</p>
+
+        <div class="notes-toolbar">
+            <button class="notes-btn primary" id="mode-toggle" type="button">📽️ 翻页模式</button>
+            <button class="notes-btn" id="fs-btn" type="button">⛶ 全屏投影</button>
+            <div class="notes-pager">
+                <button class="notes-btn" id="prev-btn" type="button">‹ 上一页</button>
+                <span class="notes-page-indicator" id="page-indicator">1 / 12</span>
+                <button class="notes-btn" id="next-btn" type="button">下一页 ›</button>
+            </div>
+        </div>
+
+        <!-- ============ Slide 1 ============ -->
+        <section class="slide">
+            <div class="slide-kicker">W2 · 第1节 · OPENING</div>
+            <h2>开场：检索是方法论，不是"搜一下"</h2>
+            <ul>
+                <li><strong>本周定位</strong>：Phase 1 Foundation 第 2 周——文献检索是方法论（检索式、纳入排除标准、留痕可复现），不是"搜一下"</li>
+                <li><strong>本周主线</strong>：AI 辅助筛选，但<strong>人来定标准</strong>；文献检索正是"AI 执行、人定标准"的<strong>第一个真实科研环节</strong></li>
+                <li><strong>与 W1 的衔接</strong>：本周是 W1 AI 辅助编程的第一次真实科研应用——用 opencode 开发结构化检索脚本</li>
+            </ul>
+            <div class="callout"><strong>学习目标</strong>：说明系统性检索策略（检索词 / 数据库 / 纳入排除标准）→ 用 opencode 开发检索脚本并与 AI 结对调试 → 用课程 skill 三源批量获取文献元数据 → 说明 AI 辅助筛选的边界与检索可复现意识。</div>
+        </section>
+
+        <!-- ============ Slide 2 ============ -->
+        <section class="slide">
+            <div class="slide-kicker">W2 · 第1节 · 必读分享（8 分钟）</div>
+            <h2>💡 Can Generative AI improve social science?</h2>
+            <ul>
+                <li>W1 课后必读：Bail, C. A. (2024) <a href="https://www.pnas.org/doi/10.1073/pnas.2314021121" target="_blank" rel="noopener">"Can Generative AI improve social science?" <i>PNAS</i>, 121(21), e2314021121（开放获取）</a></li>
+                <li>💡 抽取 2–3 位同学分享读后感想：生成式 AI 能改进社科研究的<strong>哪些环节</strong>——调研、实验、自动化内容分析、ABM？</li>
+                <li><strong>局限在哪</strong>：训练数据偏见、伦理、可复现性、"低质研究"泛滥</li>
+                <li>与"人判断、AI 执行"如何呼应？教师收拢到本周主线：文献检索正是这个分工的第一个真实科研环节</li>
+            </ul>
+        </section>
+
+        <!-- ============ Slide 3 ============ -->
+        <section class="slide">
+            <div class="slide-kicker">W2 · 第1节 · 方法论 · 检索式构建（20 分钟讲解含现场演示）</div>
+            <h2>Levy &amp; Ellis「Inputs」之一：检索式构建</h2>
+            <ul>
+                <li><strong>以 Levy &amp; Ellis (2006) <a href="https://www.informingscience.org/Publications/479" target="_blank" rel="noopener">"输入—加工—输出"</a>系统框架的 §2 Literature Review: Inputs（文献获取与筛选）一节为纲</strong>，讲三组要点</li>
+                <li><strong>检索式构建</strong>（原文 "Keywords search"）：检索词作用于标题 / 摘要 / 关键词字段</li>
+                <li>新手"冷启动"难题——检索词从哪来？<strong>最佳来源是文献本身</strong>：ACM 分类体系、MIS Quarterly Roadmap 可作起点</li>
+                <li>关键词有生命周期（MRP→ERP）、技术热词（如 phishing）易失效——应上升到<strong>稳定的理论构念</strong></li>
+                <li>关键词检索只是起点，需配合<strong>回溯检索</strong>（backward，查参考文献）与<strong>前向检索</strong>（forward，查施引文献）——源自 <a href="https://misq.umn.edu/misq/article/26/2/xiii/1323/Analyzing-the-Past-to-Prepare-for-the-Future" target="_blank" rel="noopener">Webster &amp; Watson (2002)</a></li>
+            </ul>
+        </section>
+
+        <!-- ============ Slide 4 ============ -->
+        <section class="slide">
+            <div class="slide-kicker">W2 · 第1节 · 方法论 · 数据库选择 + 纳入排除标准</div>
+            <h2>Levy &amp; Ellis「Inputs」之二、之三</h2>
+            <ul>
+                <li><strong>数据库选择</strong>（原文 "Where to look for quality IS literature"）：
+                    <ul>
+                        <li>同行评审权威期刊应为主体，非评审 / 从业者来源仅限事实性信息</li>
+                        <li>用期刊排名列表（ISWorld）反推数据库覆盖（原文 Figure 2 将排名期刊映射到 ProQuest / ScienceDirect / IEEE Xplore / ACM DL 等库）</li>
+                        <li>勿把检索范围锁死在单一数据库</li>
+                    </ul>
+                </li>
+                <li><strong>纳入排除标准</strong>（原文 "Testing for applicability"）：
+                    <ul>
+                        <li>适用性检验含纳入 / 排除与文献伦理使用两个面向</li>
+                        <li>检索命中过多时（原文以 TAM 海量文献为例）依据什么纳入、排除须<strong>事先定标准</strong></li>
+                        <li>守住质量底线：同行评审优先</li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="callout"><strong>检索的价值</strong>：Webster &amp; Watson（2002）"分析过去、准备未来"——检索质量决定综述上限。现场演示：从大家提的一个真实关键词出发，走完"关键词检索 → 回溯（查参考文献）→ 前向（查施引文献）"的完整链条。</div>
+        </section>
+
+        <!-- ============ Slide 5 ============ -->
+        <section class="slide">
+            <div class="slide-kicker">W2 · 第1节 · 工具盘点 + 课堂互动（9 + 8 分钟）</div>
+            <h2>检索工具盘点 · 你的检索经验</h2>
+            <ul>
+                <li><strong>检索数据库</strong>：Google Scholar / Web of Science / Semantic Scholar / Crossref / arXiv</li>
+                <li><strong>第三方文献平台</strong>：<a href="https://www.aminer.cn/" target="_blank" rel="noopener">AMiner</a>；<strong>个人文献管理数据库</strong>：<a href="https://www.zotero.org/" target="_blank" rel="noopener">Zotero</a>（W3 主角）</li>
+                <li><strong>课堂实操范围</strong>：只覆盖 arXiv / Google Scholar / Web of Science 三源（整合为课程 skill <code>search-paper-ai4s-class</code>），不做知网 / CNKI，中文文献课后自查</li>
+                <li>✍️ <strong>检索式初稿（3 min）</strong>：每人草拟自己领域的检索式</li>
+                <li>💡 <strong>经验分享（5 min）</strong>：抽 2–3 位同学分享平时检索文献的真实经验——关键词及同义词怎么积累、惯用哪些数据库 / 平台、踩过什么坑（只用技术热词、只查一个库）；教师把分享对号入座到 Inputs 三要点</li>
+            </ul>
+            <div class="callout"><strong>过渡</strong>：检索式有了，下一节把它写成脚本——"把检索式写成脚本"是本周方法论落地的关键一步。</div>
+        </section>
+
+        <!-- ============ Slide 6 ============ -->
+        <section class="slide">
+            <div class="slide-kicker">W2 · 第2节 · 微实验 1（8 分钟 · 师生共建）</div>
+            <h2>opencode 开发检索脚本 · 最小调用</h2>
+            <ul>
+                <li><strong>开场点明检索脚本需要的结构</strong>：检索式参数化、API 调用、分页与限流、异常处理</li>
+                <li><strong>每个实验都是</strong>：提任务 → 对话式生成 → 点运行 → 看结果，教师边做学生边跟</li>
+                <li><strong>微实验 1</strong>：让 opencode 写最小脚本——调用 arXiv 开放 API（免 key、返回 XML）检索一个关键词，解析并打印前 5 条论文标题</li>
+                <li>体验"<strong>API 调用 + 异常处理</strong>"最小闭环</li>
+            </ul>
+            <div class="callout"><strong>学生操作文档</strong>：<a href="../materials/week02/opencode-search-lab.md" download>materials/week02/opencode-search-lab.md（MD 下载）</a>，含提示词模板与排错速查；环境没配好先看 <a href="../materials/week02/venv-setup.md" download>venv-setup.md（MD 下载）</a>。</div>
+        </section>
+
+        <!-- ============ Slide 7 ============ -->
+        <section class="slide">
+            <div class="slide-kicker">W2 · 第2节 · 微实验 2（12 分钟）</div>
+            <h2>换库与边界：三源对比 · 工具可得性</h2>
+            <ul>
+                <li><strong>微实验 2</strong>：同款脚本改 API 端点与参数，切换到 Google Scholar（SerpAPI Key）与 Web of Science（机构 Key）</li>
+                <li>结果写入带<strong>留痕列</strong>（query / source / retrieved_at）的 CSV，同一检索式对比三源覆盖差异：<strong>arXiv</strong> 只有预印本、<strong>GS</strong> 有被引数与灰色文献、<strong>WoS</strong> 是 SSCI/SCI 正式库</li>
+                <li><strong>工具边界</strong>：Web of Science 需机构订阅 <a href="https://developer.clarivate.com/apis/wos-starter" target="_blank" rel="noopener">Clarivate API key</a></li>
+            </ul>
+            <div class="callout"><strong>呼应 Inputs</strong>："勿锁死单一数据库"——工具边界本身就是检索策略的一部分。</div>
+        </section>
+
+        <!-- ============ Slide 8 ============ -->
+        <section class="slide">
+            <div class="slide-kicker">W2 · 第2节 · 跟做 + 留痕（15 + 10 分钟）</div>
+            <h2>结对调试 · 检索留痕意识</h2>
+            <ul>
+                <li><strong>学生跟做（15 min）</strong>：每人用课程 skill <code>search-paper-ai4s-class</code> 把检索式换成自己领域，用三源中可用的源跑通拿到第一批元数据
+                    <ul>
+                        <li>arXiv 适合 CS / 量化方向，社科方向多用 scholar / wos</li>
+                        <li>缺 Key 时先跑 arxiv，课后申请 Key 补全</li>
+                        <li>报错按"<strong>问 AI（附报错）→ 同学互助 → 举手教师</strong>"顺序排障</li>
+                    </ul>
+                </li>
+                <li><strong>检索留痕意识（10 min）</strong>：检索式、数据库、日期、命中数——每次检索可复现，为 W3 清洗与综述写作留证据</li>
+                <li>留痕字段就写进 CSV 的列名里（query、source、retrieved_at）——让"可复现"从口号变成<strong>脚本的一部分</strong></li>
+            </ul>
+        </section>
+
+        <!-- ============ Slide 9 ============ -->
+        <section class="slide">
+            <div class="slide-kicker">W2 · 第3节 · SKILL 基础（12 分钟 · 教师讲解为主）</div>
+            <h2>为什么需要 skill · skill 的解剖</h2>
+            <ul>
+                <li><strong>升级链条</strong>：一次性脚本 → 参数化脚本 → skill
+                    <ul>
+                        <li>脚本跑完就沉底，每次让 AI 重写都得重新交代流程</li>
+                        <li>skill 把"什么时候用、怎么用、有哪些约定"写进 <code>SKILL.md</code>，opencode 在对话中<strong>自动触发、跨项目复用</strong>——把个人检索经验固化成可复用资产</li>
+                    </ul>
+                </li>
+                <li><strong>skill 的解剖</strong>（以课程 skill <code>search-paper-ai4s-class</code> 为活教材）：
+                    <ul>
+                        <li>frontmatter 的 <code>name</code> / <code>description</code> 决定"何时被触发"（description 要写清使用场景与触发关键词）</li>
+                        <li>正文写工作流程、默认命令、参数表；<code>scripts/</code> 放脚本、<code>references/</code> 放 API 文档摘录</li>
+                        <li><strong>边界写进 skill 本身</strong>（如"人定纳入排除标准，本 skill 只检索与去重"）——工具设计就是方法论落地</li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="callout"><strong>落点</strong>："AI 执行、人定标准"从口号变成规则——写进 skill 的边界条款里。</div>
+        </section>
+
+        <!-- ============ Slide 10 ============ -->
+        <section class="slide">
+            <div class="slide-kicker">W2 · 第3节 · 从头构建 skill（18 分钟 · 师生共建微实验）</div>
+            <h2>用 skill-creator 构建多源检索 skill</h2>
+            <ul>
+                <li><strong>原料</strong>：第 2 节自己写的三个脚本；第 2 节没写全的同学，直接以课程 skill 为案例拆解重建</li>
+                <li><strong>构建流程四步</strong>：
+                    <ul>
+                        <li>① <strong>定边界</strong>（做什么 / 不做什么）</li>
+                        <li>② 让 opencode 起草 <code>SKILL.md</code>，<strong>人修改</strong> description 的触发词与场景</li>
+                        <li>③ 收编脚本进 <code>scripts/</code></li>
+                        <li>④ <strong>实测</strong>：对 opencode 说"帮我检索文献"看是否自动触发；用自己构建的 skill 对同一检索式分别查 arXiv / Google Scholar / Web of Science，比较覆盖与被引数差异、标记去重字段（DOI → arXiv ID → 规范化题名）</li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="callout"><strong>学生操作文档</strong>：<a href="../materials/week02/skill-lab.md" download>materials/week02/skill-lab.md（MD 下载）</a>，含提示词模板与验收检查点。</div>
+        </section>
+
+        <!-- ============ Slide 11 ============ -->
+        <section class="slide">
+            <div class="slide-kicker">W2 · 第3节 · 质检 + 初筛 + 铺垫（7 + 8 分钟）</div>
+            <h2>skill 质检 · AI 辅助初筛 · W3 预告</h2>
+            <ul>
+                <li><strong>skill 质检与改进（7 min）</strong>：AI 产品也有"同行评审"——用 <strong>skill-quality-reviewer</strong> 给自己的 skill 体检（description 质量、结构完整性、写作风格），用 <strong>skill-improver</strong> 把改进建议落地；同座位互换，互相测对方 skill 的触发准确度；落选的表述、冗余的说明就在这一轮删掉</li>
+                <li><strong>AI 辅助初筛（8 min）</strong>：人定纳入排除标准 → AI 按标准对元数据（标题 / 摘要）做初步筛选分类 → 抽查校准；<strong>边界：AI 执行筛选，人来定标准</strong></li>
+                <li>文献库不足 ≥20 篇的课后用自己构建的 skill 补全</li>
+                <li><strong>W3 预告</strong>：把原始文献库导入 Zotero 清洗、用两篇方法论文献指导综述写作；预告进阶轨（手写最小 RAG，加分）</li>
+            </ul>
+        </section>
+
+        <!-- ============ Slide 12 ============ -->
+        <section class="slide">
+            <div class="slide-kicker">W2 · WRAP-UP</div>
+            <h2>课后任务 · 下周预告</h2>
+            <ul>
+                <li>✅ <strong>文献检索工具列表</strong>：基于自己常用的数据库、API、工具，更新你的文献检索 skills</li>
+                <li>📚 <strong>课后练习</strong>：构建个人研究领域的检索式，用 API 批量获取<strong>至少 20 篇</strong>文献元数据（CSV）</li>
+                <li>⭐ <strong>进阶</strong>：用 skill-quality-reviewer / skill-improver 对你的 skill 完成一轮质检与改进</li>
+                <li>📌 <strong>课后必读</strong>：<a href="https://misq.umn.edu/misq/article/26/2/xiii/1323/Analyzing-the-Past-to-Prepare-for-the-Future" target="_blank" rel="noopener">Webster &amp; Watson (2002)，MIS Quarterly</a>——W3 综述写作阶段继续使用</li>
+            </ul>
+            <div class="callout"><strong>方法论锚定</strong>：体现系统性检索策略、检索方法论框架意识（Levy &amp; Ellis）、AI 辅助筛选的边界、检索可复现意识——这些是评分时看的方法论素养。</div>
+        </section>
+
+        <div class="notes-foot-nav">
+            <span></span>
+            <a href="../weekly.html">← 返回每周材料</a>
+            <span></span>
+        </div>
+    </main>
+
+    <footer>
+        人工智能大模型应用 · 2026秋季课程
+        <span style="display:block;margin-top:4px;font-size:0.9em;opacity:0.7;">最后更新 2026-11-09</span>
+    </footer>
+
+    <script>
+    (function () {
+        var main = document.querySelector('.notes-main');
+        var slides = Array.prototype.slice.call(document.querySelectorAll('.slide'));
+        var indicator = document.getElementById('page-indicator');
+        var prevBtn = document.getElementById('prev-btn');
+        var nextBtn = document.getElementById('next-btn');
+        var modeBtn = document.getElementById('mode-toggle');
+        var fsBtn = document.getElementById('fs-btn');
+        var idx = 0;
+
+        function savedMode() {
+            try { return localStorage.getItem('notes-mode') || 'scroll'; }
+            catch (e) { return 'scroll'; }
+        }
+
+        function isSlideMode() { return main.classList.contains('slide-mode'); }
+
+        function setMode(mode) {
+            main.classList.toggle('slide-mode', mode === 'slide');
+            try { localStorage.setItem('notes-mode', mode); } catch (e) {}
+            modeBtn.textContent = mode === 'slide' ? '📖 滚动模式' : '📽️ 翻页模式';
+            show(idx, false);
+        }
+
+        function show(i, scroll) {
+            idx = Math.max(0, Math.min(slides.length - 1, i));
+            slides.forEach(function (s, k) { s.classList.toggle('current', k === idx); });
+            indicator.textContent = (idx + 1) + ' / ' + slides.length;
+            if (scroll && !isSlideMode()) {
+                slides[idx].scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        }
+
+        prevBtn.addEventListener('click', function () { show(idx - 1, true); });
+        nextBtn.addEventListener('click', function () { show(idx + 1, true); });
+
+        modeBtn.addEventListener('click', function () {
+            setMode(isSlideMode() ? 'scroll' : 'slide');
+        });
+
+        function toggleFullscreen() {
+            if (document.fullscreenElement) { document.exitFullscreen(); }
+            else if (document.documentElement.requestFullscreen) { document.documentElement.requestFullscreen(); }
+        }
+        fsBtn.addEventListener('click', toggleFullscreen);
+
+        document.addEventListener('keydown', function (e) {
+            if (e.target && /^(INPUT|TEXTAREA|SELECT)$/.test(e.target.tagName)) return;
+            if (e.key === 'ArrowRight' || e.key === 'PageDown' || e.key === ' ') {
+                if (isSlideMode()) { e.preventDefault(); show(idx + 1, false); }
+            } else if (e.key === 'ArrowLeft' || e.key === 'PageUp') {
+                if (isSlideMode()) { e.preventDefault(); show(idx - 1, false); }
+            } else if (e.key === 'f' || e.key === 'F') {
+                toggleFullscreen();
+            }
+        });
+
+        setMode(savedMode());
+    })();
+    </script>
+</body>
+</html>
