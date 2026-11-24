@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>W3 授课要点 — 文献综述：RAG 知识库 + AI 综述</title>
+    <meta name="description" content="第 3 周授课要点：文献库整理与 Zotero MCP 直连、综述写作规范与最小 RAG 实操、设计人在环路的 AI 辅助综述生成 skill。支持课堂翻页投影与课后滚动阅读。">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="stylesheet" href="../style.css?v=5">
+</head>
+<body>
+    <nav>
+        <div class="nav-inner">
+            <a href="../index.html" class="logo">
+                <div class="logo-icon">
+                    <svg width="26" height="26" viewBox="0 0 32 32" fill="none">
+                        <circle cx="16" cy="16" r="2.8" fill="white"/>
+                        <ellipse cx="16" cy="16" rx="13" ry="5" stroke="white" stroke-width="1.5"/>
+                        <ellipse cx="16" cy="16" rx="13" ry="5" stroke="white" stroke-width="1.5" transform="rotate(60 16 16)"/>
+                        <ellipse cx="16" cy="16" rx="13" ry="5" stroke="white" stroke-width="1.5" transform="rotate(120 16 16)"/>
+                        <circle cx="27.5" cy="13" r="1.4" fill="#06b6d4"/>
+                        <circle cx="6.5" cy="19.5" r="1.4" fill="#06b6d4"/>
+                    </svg>
+                </div>
+                <span class="logo-text"><span class="logo-title">人工智能大模型应用</span><span class="logo-subtitle">AI for Social Science</span></span>
+            </a>
+            <input type="checkbox" id="nav-toggle" class="nav-toggle">
+            <label for="nav-toggle" class="nav-toggle-label" aria-label="菜单">
+                <span></span><span></span><span></span>
+            </label>
+            <ul class="nav-links">
+                <li><a href="../intro.html">课程简介</a></li>
+                <li><a href="../timeline.html">项目之旅</a></li>
+                <li><a href="../weekly.html" class="active">每周材料</a></li>
+                <li><a href="../projects.html">精彩项目</a></li>
+                <li><a href="../resources.html">课程资源</a></li>
+                <li><a href="../papers.html">学术前沿</a></li>
+                <li><a href="../news.html">产业新闻</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="notes-main">
+        <div class="notes-head">
+            <span class="notes-week-badge">W3</span>
+            <h1 class="notes-title">授课要点 · 文献综述 — RAG 知识库 + AI 综述</h1>
+        </div>
+        <p class="notes-subtitle">第 3 周课堂内容纲要（3 节课）· 第 1 节文献库整理与 Zotero MCP 直连 · 第 2 节综述写作规范与最小 RAG 实操 · 第 3 节设计人在环路的 AI 辅助综述生成 skill。点击「翻页模式」可像 PPT 一样逐页投影（键盘 ← → 翻页，F 全屏）；默认滚动模式适合课后复习。</p>
+
+        <div class="notes-toolbar">
+            <button class="notes-btn primary" id="mode-toggle" type="button">📽️ 翻页模式</button>
+            <button class="notes-btn" id="fs-btn" type="button">⛶ 全屏投影</button>
+            <div class="notes-pager">
+                <button class="notes-btn" id="prev-btn" type="button">‹ 上一页</button>
+                <span class="notes-page-indicator" id="page-indicator">1 / 13</span>
+                <button class="notes-btn" id="next-btn" type="button">下一页 ›</button>
+            </div>
+        </div>
+
+        <!-- ============ Slide 1 ============ -->
+        <section class="slide">
+            <div class="slide-kicker">W3 · 第1节 · OPENING</div>
+            <h2>开场：从检索到综述的桥梁</h2>
+            <ul>
+                <li><strong>本周定位</strong>：Phase 1 Foundation 第 3 周，文献综述（计入阶段成果一）。文献库整理是<strong>检索到综述的桥梁</strong></li>
+                <li><strong>范式转变</strong>：第三方智能检索工具改变文献阅读范式——从"读完记住"到"<strong>检索即用</strong>"</li>
+                <li><strong>核心立场</strong>：综述是<strong>结构化综合</strong>而非摘抄堆砌；AI 执行机械活，人在闸口做判断</li>
+                <li><strong>与 W2 的衔接</strong>：上周检索得到的 ≥20 篇文献池，本周导入 Zotero 清洗，进而驱动综述生成</li>
+            </ul>
+            <div class="callout"><strong>学习目标</strong>：用 Zotero 管理文献库（导入、去重、标签、规范化、纳入排除筛选）→ 课堂跟做跑通最小 RAG（切分→嵌入→存库→检索）→ 用 Zotero MCP 做智能检索与问答 → 设计并实现人在环路的 AI 辅助综述生成 skill。</div>
+        </section>
+
+        <!-- ============ Slide 2 ============ -->
+        <section class="slide">
+            <div class="slide-kicker">W3 · 第1节 · 文献库整理（12 分钟）</div>
+            <h2>文献库整理与去重：构造参考文献池</h2>
+            <ul>
+                <li><strong>目标不是"管理文献"</strong>，而是构造后续生成工作流的<strong>参考文献池</strong></li>
+                <li><strong>AI 查重（只读）</strong>：无专用查重工具——AI 拉全库按标题 / DOI 分组输出疑似重复</li>
+                <li><strong>人工合并</strong>：回 Zotero 界面 Duplicate Items 视图，核对<strong>哪份带 PDF 和标注</strong>再合并</li>
+                <li><strong>批量打标签</strong>：先 1 篇试水，再 <code>zotero_batch_update</code> 批量</li>
+            </ul>
+            <div class="callout"><strong>学生操作文档</strong>：<a href="../materials/week03/zotero-lab.md" download>materials/week03/zotero-lab.md（MD 下载）</a>第 6 步——课前须完成 Zotero MCP 安装与 OpenCode 配置（第1–3步）和写入授权（6.1 节，弹窗选 Always Allow）。</div>
+        </section>
+
+        <!-- ============ Slide 3 ============ -->
+        <section class="slide">
+            <div class="slide-kicker">W3 · 第1节 · 纳入排除（8 分钟）</div>
+            <h2>纳入排除标准：Zotero 管"信什么"</h2>
+            <ul>
+                <li>用 <code>zotero_advanced_search</code> 按 <code>dateAdded</code> 圈出 W2 导入批次，再按<strong>时间范围、方法论类型</strong>筛选</li>
+                <li><strong>分工点明</strong>：Zotero 管"<strong>信什么</strong>"（人工守住的 screening 环节），AI 工作流管"<strong>怎么写</strong>"</li>
+                <li>这是 W2 Levy &amp; Ellis"输入—加工—输出"框架中 Inputs 环节的延续：纳入排除标准<strong>事先定好</strong>，不是边看边扔</li>
+            </ul>
+            <div class="callout"><strong>呼应 W2</strong>：W2 检索阶段定下的纳入排除标准（同行评审优先、勿锁死单一数据库），本周在生成工作流中落地为文献池的边界。</div>
+        </section>
+
+        <!-- ============ Slide 4 ============ -->
+        <section class="slide">
+            <div class="slide-kicker">W3 · 第1节 · MCP 直连（18 分钟）</div>
+            <h2>MCP 直连：找→读→标注 · 语义检索埋点</h2>
+            <ul>
+                <li>验证连接（<code>/mcps</code> 里 zotero 显示 connected）后走完整流水线：<strong>关键词检索 → 读元数据与摘要 → 全文与续读 → 高亮标注提取</strong></li>
+                <li><strong>子串匹配三规则</strong>：多词收窄、默认只搜元数据、没命中自动降级</li>
+                <li>提及 <a href="https://www.aminer.cn/" target="_blank" rel="noopener">AMiner</a> 等第三方智能检索工具（学者图谱、对话式检索）作为对照路线，不展开演示</li>
+                <li><strong>末尾 2 分钟语义检索初尝</strong>（<code>zotero_semantic_search</code>）——为第 2 节 RAG 埋点</li>
+                <li>💡 <strong>课堂互动</strong>：请 1 位同学投屏用自然语言操作自己的文献库</li>
+            </ul>
+            <div class="callout"><strong>学生操作文档</strong>：<a href="../materials/week03/zotero-lab.md" download>materials/week03/zotero-lab.md（MD 下载）</a>第 4–5 步——MCP 直连的完整流水线。</div>
+        </section>
+
+        <!-- ============ Slide 5 ============ -->
+        <section class="slide">
+            <div class="slide-kicker">W3 · 第2节 · 综述写作规范（10 分钟）</div>
+            <h2>综述有逻辑框架，而非逐篇罗列</h2>
+            <ul>
+                <li><strong>逻辑框架</strong>：按<strong>主题 / 方法论 / 时间线</strong>组织文献，而非"作者 A 说了什么、作者 B 说了什么"的罗列</li>
+                <li><strong>好综述与差综述对比</strong>：概念组织 vs 逐篇摘抄——差综述是"文献列表的散文版"</li>
+                <li><strong>以 Webster &amp; Watson（2002）"概念中心矩阵"说明如何按概念而非按篇组织文献</strong>：行=概念，列=文献，一眼看出概念间关系与研究空白</li>
+                <li>W2 检索阶段的方法论阅读（Levy &amp; Ellis 2006、Webster &amp; Watson 2002）在<strong>综述写作阶段的延续</strong>——也是第 3 节大纲闸口的方法论前置</li>
+            </ul>
+            <div class="callout"><strong>落点</strong>：综述的"组织逻辑"就是第 3 节 skill 设计里 G-大纲闸口要人裁决的核心判断。</div>
+        </section>
+
+        <!-- ============ Slide 6 ============ -->
+        <section class="slide">
+            <div class="slide-kicker">W3 · 第2节 · RAG 原理（8 分钟）</div>
+            <h2>从"读完记住"到"检索即用"</h2>
+            <ul>
+                <li><strong>RAG 概念讲解</strong>：检索（Retrieval）→ 增强（Augmentation）→ 生成（Generation）——先把相关片段找出来塞进 Prompt，再让 LLM 基于片段回答</li>
+                <li><strong>衔接第 1 节末尾体验的 <code>zotero_semantic_search</code></strong>——它就是 RAG 检索环节的自动化封装</li>
+                <li><strong>以 LiRA（AAAI 2026）为实例</strong>：其 Subsection Writer 用 FAISS 按小节检索文献、引用完整标题作"<strong>语义锚点</strong>"抑制幻觉</li>
+                <li><strong>为什么检索是核心瓶颈</strong>：检索不到，再强的 LLM 也编不出靠谱答案——生成质量的上限由检索质量决定</li>
+            </ul>
+        </section>
+
+        <!-- ============ Slide 7 ============ -->
+        <section class="slide">
+            <div class="slide-kicker">W3 · 第2节 · 最小 RAG 跟做（22 分钟）</div>
+            <h2>跑通 rag_demo.py：手写一遍检索</h2>
+            <ul>
+                <li>按 <code>RAG-lab.md</code> 第 3–5 步<strong>全员跑通</strong> <code>rag_demo.py</code>——嵌入存库 → 交互式语义检索</li>
+                <li><strong>默认问题</strong>："数字技术加剧了什么样的不平等？"——体会<strong>字面无关仍可命中</strong>（问句里没有"数字鸿沟"四个字，语义检索照样找到）</li>
+                <li>换<strong>自己的问题</strong>连续检索（回车用默认问题、再回车退出）</li>
+                <li><strong>字面包含对比</strong>：同场看清语义检索与关键词检索的差异</li>
+                <li><strong>课前已装依赖、模型已分发，课上零下载</strong>——跑通即完成"检索是核心瓶颈"的体感</li>
+                <li>💡 <strong>课堂互动</strong>：抽 1–2 位投屏演示自己的检索问题与结果对比</li>
+            </ul>
+            <div class="callout"><strong>学生操作文档</strong>：<a href="../materials/week03/RAG-lab.md" download>materials/week03/RAG-lab.md（MD 下载）</a>——进阶路线（Streamlit 检索测试台 / 换中文嵌入模型 / 接入 LLM）为加分项，课后任选。</div>
+        </section>
+
+        <!-- ============ Slide 8 ============ -->
+        <section class="slide">
+            <div class="slide-kicker">W3 · 第2节 · 对比与小结（5 分钟）</div>
+            <h2>三条检索路线对比</h2>
+            <ul>
+                <li><strong>谁在检索、检索什么</strong>——同是"检索"，三种实现路线：</li>
+                <li><strong>① MCP 直连</strong>（第 1 节）：Zotero AI 实时检索原库，关键词 + 语义</li>
+                <li><strong>② 手写 RAG</strong>（刚跑的 demo）：预先嵌入再语义检索——每一步都是自己搭的</li>
+                <li><strong>③ LiRA 的 FAISS 小节级检索</strong>：生成时按小节检索，引用 ≤文献池 25%</li>
+                <li><strong>小结</strong>：从理解 RAG 到 AI 辅助综述生成的过渡——第 3 节把这三条路线组装成你自己的综述生成工作流</li>
+            </ul>
+        </section>
+
+        <!-- ============ Slide 9 ============ -->
+        <section class="slide">
+            <div class="slide-kicker">W3 · 第3节 · 工作流设计（10 分钟）</div>
+            <h2>拆解综述写作流程：LiRA 对照</h2>
+            <ul>
+                <li><strong>先自己拆</strong>：综述写作流程拆解为子任务<strong>（检索→筛选→提取→组织→生成→审查）</strong>，明确每步的输入输出与知识库配置</li>
+                <li>为每个子任务标注"<strong>AI 可自动 / 必须人裁决</strong>"——再对照 LiRA 四智能体参考架构</li>
+                <li><strong>LiRA（AAAI 2026）四智能体</strong>：Outline Drafter 大纲起草 → Subsection Writer 分节写作 → Editor 润色（不改事实）→ Reviewer 四准则质量审查（最多 3 轮）</li>
+                <li><strong>关键提问</strong>：LiRA 把哪些判断自动化了（Reviewer 循环自动跑、引用自动核查）？<strong>课堂版为什么要把这些裁决权拿回来？</strong></li>
+            </ul>
+            <div class="callout"><strong>判断标准</strong>：机械转换（格式化、润色、按模板提取）可自动；涉及研究判断（信什么文献、按什么逻辑组织、引用是否成立、终稿是否合格）必须人做。</div>
+        </section>
+
+        <!-- ============ Slide 10 ============ -->
+        <section class="slide">
+            <div class="slide-kicker">W3 · 第3节 · 智能检索实操（15 分钟）</div>
+            <h2>个人文献库智能检索实操</h2>
+            <ul>
+                <li><strong>每人用自己的文献库</strong>，用 Zotero MCP 直连检索（第 1 节已配好）：<strong>关键词检索零门槛</strong>，装了 <code>[semantic]</code> 的可用语义检索</li>
+                <li><strong>提取综述所需的关键信息</strong>：研究问题 | 理论框架 | 方法 | 核心发现 | 局限</li>
+                <li>体会两种检索的差异：精确匹配 vs 按意思找——同时为你的 skill <strong>验证检索底座</strong>（哪些检索词有效、语义检索质量如何）</li>
+                <li>💡 <strong>课堂互动</strong>：抽取 2–3 位同学投屏演示智能检索过程，全班交流检索策略与效果（3–4 分钟）</li>
+            </ul>
+            <div class="callout"><strong>学生操作文档</strong>：<a href="../materials/week03/review-gen-lab.md" download>materials/week03/review-gen-lab.md（MD 下载）</a>第 2 步——完整步骤见"设计参考"。</div>
+        </section>
+
+        <!-- ============ Slide 11 ============ -->
+        <section class="slide">
+            <div class="slide-kicker">W3 · 第3节 · skill 骨架搭建（15 分钟）</div>
+            <h2>人在环路的 review-gen skill：骨架与试跑</h2>
+            <ul>
+                <li>把工作流设计落成 <code>.opencode/skills/</code> 下的 skill <strong>骨架</strong>：阶段划分、<strong>人工闸口位置</strong>、各阶段规程要点与输出文件约定（<code>review/</code> 目录 + <code>memory/decisions.md</code> 留痕）</li>
+                <li><strong>最少 3 个闸口</strong>：<strong>G-纳入</strong>（文献池清单审查）· <strong>G-大纲</strong>（候选大纲裁决，通常最重）· <strong>G-终审</strong>（接受本轮还是再来一轮）；建议加 <strong>G-引用</strong>（抽 3 条引用核对，防幻觉训练点）</li>
+                <li><strong>检索层约定调用 Zotero MCP</strong>（关键词 + 语义检索），明确每阶段用哪种检索、检索什么</li>
+                <li><strong>课堂只做设计 + 骨架，实现全部课后完成</strong>；课堂内做一次单节试跑演练——用一段 Prompt 走通"检索→提取→写一节"，这段实测就是你的 Subsection Writer 提示词原型</li>
+                <li>💡 <strong>课堂互动</strong>：抽 2–3 位投屏讲自己的闸口设计——闸口放在哪、为什么</li>
+            </ul>
+            <div class="callout"><strong>学生操作文档</strong>：<a href="../materials/week03/review-gen-lab.md" download>materials/week03/review-gen-lab.md（MD 下载）</a>——闸口设计、防幻觉引用核查、留痕要点清单；课堂不给参考实现，教师参考实现 W4 学生分享后发布。</div>
+        </section>
+
+        <!-- ============ Slide 12 ============ -->
+        <section class="slide">
+            <div class="slide-kicker">W3 · 第3节 · 阶段收束（5 分钟）</div>
+            <h2>Phase 1 完成 · 课后务必完成</h2>
+            <ul>
+                <li><strong>Phase 1（Foundation）完成</strong>：回顾文献智能模块——检索（W2）→ 整理与综述（W3）→ AI 工作环境（W1）三周闭环</li>
+                <li><strong>课后务必完成</strong>：完成 review-gen skill 实现，并用它生成<strong>个人选题方向的文献综述初稿</strong>——跑通完整工作流（检索→筛选→提取→组织→生成→审查），第二轮起对 OpenCode 说"修改综述：&lt;反馈&gt;"迭代打磨</li>
+                <li>⚠️ <strong>W4 课堂将随机抽取 2–3 位同学分享</strong>自设计的 skill 与综述成果——这份综述同时是 W4 gap 分析的<strong>语料输入</strong>，认真做直接服务于下周的选题</li>
+                <li>教师参考实现将在 W4 学生分享后发布供对照——<strong>先有自己的设计，再对照差距</strong>，学习效果远好于先看答案</li>
+                <li><strong>预告 Phase 2</strong>：选题 + 研究设计（W4–W5）</li>
+            </ul>
+        </section>
+
+        <!-- ============ Slide 13 ============ -->
+        <section class="slide">
+            <div class="slide-kicker">W3 · WRAP-UP</div>
+            <h2>课后任务 · 下周预告</h2>
+            <ul>
+                <li>✅ <strong>课后练习</strong>：整理 Zotero 文献库（去重、标签、规范化，至少 20 篇）；完成 review-gen skill 实现，生成 AI 辅助综述初稿；提交 skill 目录、综述文稿、<code>rag_demo.py</code> 与运行截图、MCP 配置与检索交互截图、阶段反思日志</li>
+                <li>📌 <strong>论文精读（推荐）</strong>：<a href="https://arxiv.org/abs/2510.05138" target="_blank" rel="noopener">Go et al. (2026). "LiRA: A Multi-Agent Framework for Reliable and Readable Literature Review Generation." AAAI 2026</a>——课程 Zotero 库有全文；重点读工作流设计部分，思考"哪些环节你不放心全交给 AI"</li>
+                <li>⭐ <strong>进阶（加分）</strong>：RAG 扩展任选——Streamlit 检索测试台 / 换中文嵌入模型 <code>BAAI/bge-small-zh-v1.5</code> 对比 / 接入 LLM 完成"G"环节</li>
+                <li>📚 <strong>课后自学</strong>：RAG 原理（<code>knowledge/m1-5-rag.md</code>）· AI 辅助文献综述（<code>knowledge/m1-7-ai-literature-review.md</code>）· 综述写作规范（<code>knowledge/m1-8-review-writing.md</code>）</li>
+            </ul>
+            <div class="callout"><strong>方法论锚定</strong>：体现文献库整理逻辑、RAG 概念理解、智能检索工具使用、综述写作规范、人在环路的 skill 设计（闸口取舍）、MCP 直连检索与工作流配置思路——这些是评分时看的方法论素养。</div>
+        </section>
+
+        <div class="notes-foot-nav">
+            <a href="week02.html">← W2 授课要点</a>
+            <a href="../weekly.html">返回每周材料</a>
+            <span></span>
+        </div>
+    </main>
+
+    <footer>
+        人工智能大模型应用 · 2026秋季课程
+        <span style="display:block;margin-top:4px;font-size:0.9em;opacity:0.7;">最后更新 2026-11-24</span>
+    </footer>
+
+    <script>
+    (function () {
+        var main = document.querySelector('.notes-main');
+        var slides = Array.prototype.slice.call(document.querySelectorAll('.slide'));
+        var indicator = document.getElementById('page-indicator');
+        var prevBtn = document.getElementById('prev-btn');
+        var nextBtn = document.getElementById('next-btn');
+        var modeBtn = document.getElementById('mode-toggle');
+        var fsBtn = document.getElementById('fs-btn');
+        var idx = 0;
+
+        function savedMode() {
+            try { return localStorage.getItem('notes-mode') || 'scroll'; }
+            catch (e) { return 'scroll'; }
+        }
+
+        function isSlideMode() { return main.classList.contains('slide-mode'); }
+
+        function setMode(mode) {
+            main.classList.toggle('slide-mode', mode === 'slide');
+            try { localStorage.setItem('notes-mode', mode); } catch (e) {}
+            modeBtn.textContent = mode === 'slide' ? '📖 滚动模式' : '📽️ 翻页模式';
+            show(idx, false);
+        }
+
+        function show(i, scroll) {
+            idx = Math.max(0, Math.min(slides.length - 1, i));
+            slides.forEach(function (s, k) { s.classList.toggle('current', k === idx); });
+            indicator.textContent = (idx + 1) + ' / ' + slides.length;
+            if (scroll && !isSlideMode()) {
+                slides[idx].scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        }
+
+        prevBtn.addEventListener('click', function () { show(idx - 1, true); });
+        nextBtn.addEventListener('click', function () { show(idx + 1, true); });
+
+        modeBtn.addEventListener('click', function () {
+            setMode(isSlideMode() ? 'scroll' : 'slide');
+        });
+
+        function toggleFullscreen() {
+            if (document.fullscreenElement) { document.exitFullscreen(); }
+            else if (document.documentElement.requestFullscreen) { document.documentElement.requestFullscreen(); }
+        }
+        fsBtn.addEventListener('click', toggleFullscreen);
+
+        document.addEventListener('keydown', function (e) {
+            if (e.target && /^(INPUT|TEXTAREA|SELECT)$/.test(e.target.tagName)) return;
+            if (e.key === 'ArrowRight' || e.key === 'PageDown' || e.key === ' ') {
+                if (isSlideMode()) { e.preventDefault(); show(idx + 1, false); }
+            } else if (e.key === 'ArrowLeft' || e.key === 'PageUp') {
+                if (isSlideMode()) { e.preventDefault(); show(idx - 1, false); }
+            } else if (e.key === 'f' || e.key === 'F') {
+                toggleFullscreen();
+            }
+        });
+
+        setMode(savedMode());
+    })();
+    </script>
+</body>
+</html>
